@@ -16,6 +16,12 @@ public class DriverFactory {
 		case "firefox":
 			driver = new FirefoxDriver();
 			return driver;
+		case "chrome":
+			return driver;
+		case "ie":
+			return driver;
+		case "safari":
+			return driver;
 		default:		
 		}
 		return null;
