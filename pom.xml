@@ -13,20 +13,9 @@
 		</dependency>
 
 		<dependency>
-			<groupId>velocity</groupId>
-			<artifactId>velocity-dep</artifactId>
-			<version>1.4</version>
-		</dependency>
-		<dependency>
 			<groupId>org.uncommons</groupId>
-			<artifactId>reportng</artifactId>
-			<version>1.1.4</version>
-			<exclusions>
-				<exclusion>
-					<groupId>org.testng</groupId>
-					<artifactId>testng</artifactId>
-				</exclusion>
-			</exclusions>
+			<artifactId>CustomizeReportng</artifactId>
+			<version>1.1.7</version>
 		</dependency>
 
 		<dependency>
@@ -38,7 +27,7 @@
 		<dependency>
 			<groupId>com.google.inject</groupId>
 			<artifactId>guice</artifactId>
-			<version>4.0-beta5</version>
+			<version>3.0</version>
 		</dependency>
 	</dependencies>
 
