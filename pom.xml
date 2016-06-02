@@ -45,7 +45,7 @@
 						</property>
 						<property>
 							<name>listener</name>
-							<value>org.uncommons.reportng.HTMLReporter</value>
+							<value>BasicTool.BaseHtmlReport</value>
 						</property>
 					</properties>
 					<workingDirectory>target/</workingDirectory>
