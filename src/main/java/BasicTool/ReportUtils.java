@@ -15,15 +15,8 @@ public class ReportUtils extends ReportNGUtils {
             output.add("Generating report error: " + error);
             return output;
         }
-
-//        final String screenshot = (String) result.getAttribute("screenshot");
-
-//        if (screenshot != null) {
-//            String str = "<a href=\"" + screenshot + "\" target=\"_blank\">Screenshot</a> for a page "
-//                    + result.getAttribute("screenshotURL");
-//            output.add(str);
-//        }
-        List<String> screenshots = (List<String>) result.getAttribute("screenshots"); 
+        List<String> attribute = (List<String>) result.getAttribute("screenshots");
+        List<String> screenshots = attribute; 
         if(!screenshots.isEmpty()){
             for(String str:screenshots){
                 String str1 = "<a href=\"../../" + str + "\" target=\"_blank\">Screenshot</a>";
