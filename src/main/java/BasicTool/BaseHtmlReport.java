@@ -7,6 +7,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Random;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.velocity.VelocityContext;
@@ -15,6 +16,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
+import org.slf4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -22,9 +24,9 @@ import org.uncommons.reportng.HTMLReporter;
 
 public class BaseHtmlReport extends HTMLReporter implements ITestListener {
 
-    public static final String DRIVER_ATTRIBUTE = "driver";
     private static final String UTILS_KEY = "utils";
     private static final ReportUtils REPORT_UTILS = new ReportUtils();
+    private static Logger log = LogFactory.getLogger(BaseHtmlReport.class);
 
     protected VelocityContext createContext() {
         final VelocityContext context = super.createContext();
@@ -56,13 +58,12 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
         }
 
         result.setAttribute("screenshotURL", driver.getCurrentUrl());
-        result.removeAttribute(DRIVER_ATTRIBUTE);
     }
 
     private static List<String> list = new ArrayList<String>();
 
     public static void createScreenshots(final WebDriver driver) {
-        final String fileName = String.valueOf(System.currentTimeMillis()).substring(5);
+        final String fileName = String.valueOf(System.currentTimeMillis()) + getRandomString(9);
         try {
             File scrFile;
 
@@ -105,10 +106,15 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
     }
 
     public void onTestFailure(ITestResult result) {
+        createScreenshots(DriverFactory.getCurrentDriver());
+        log.info("TestCases Failure!!!!");
         takeScreenshots(result);
+
     }
 
     public void onTestSkipped(ITestResult result) {
+        createScreenshots(DriverFactory.getCurrentDriver());
+        log.info("TestCases Skipped!!!!");
         takeScreenshots(result);
 
     }
@@ -119,7 +125,20 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
     }
 
     public void onTestSuccess(ITestResult result) {
+        createScreenshots(DriverFactory.getCurrentDriver());
+        log.info("TestCases Success!!!!");
         takeScreenshots(result);
+    }
+
+    public static String getRandomString(int length) { // length表示生成字符串的长度
+        String base = "abcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < length; i++) {
+            int number = random.nextInt(base.length());
+            sb.append(base.charAt(number));
+        }
+        return sb.toString();
     }
 
 }

@@ -12,7 +12,6 @@ public class Mytest {
     @BeforeMethod
     public void init() {
         wd = DriverFactory.createNewDriver();
-        wd.manage().window().maximize();
     }
 
     @Test
@@ -20,12 +19,12 @@ public class Mytest {
         wd.get("http://www.baidu.com");
         Thread.sleep(5000);
         BaseHtmlReport.createScreenshots(wd);
-        wd.get("http://www.bing.com");
-        Thread.sleep(10000);
-        BaseHtmlReport.createScreenshots(wd);
+//        wd.get("http://www.bing.com");
+//        Thread.sleep(10000);
+//        BaseHtmlReport.createScreenshots(wd);
     }
 
-    //@Test
+ //    @Test
     public void MyfristTest6() throws InterruptedException {
         // WebDriver wd = DriverFactory.getDriver();
         wd.get("http://www.baidu.com");
@@ -37,22 +36,22 @@ public class Mytest {
 
     }
 
-    // @Test
+     @Test
     public void MyfristTest7() throws InterruptedException {
-        wd.get("http://www.baidu.com");
-        Thread.sleep(5000);
-        BaseHtmlReport.createScreenshots(wd);
+//        wd.get("http://www.baidu.com");
+//        Thread.sleep(5000);
+//        BaseHtmlReport.createScreenshots(wd);
         wd.get("http://www.google.com");
-        Thread.sleep(10000);
+//        Thread.sleep(10000);
         BaseHtmlReport.createScreenshots(wd);
-        wd.get("http://www.baidu.com");
-        Thread.sleep(10000);
+//        wd.get("http://www.baidu.com");
+        Thread.sleep(5000);
         Assert.assertTrue(false);
     }
 
     @AfterMethod
     public void destory() {
-        //DriverFactory.CloseDriver();
+        DriverFactory.CloseDriver();
     }
 
 }
