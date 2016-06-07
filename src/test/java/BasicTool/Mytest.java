@@ -16,17 +16,19 @@ public class Mytest {
 
     @Test
     public void MyfristTest5() throws InterruptedException {
+        wd.get("http://www.jiedaibao.com/pcIndex.html");
+        Thread.sleep(5000);
+        BaseHtmlReport.createScreenshots(wd);
         wd.get("http://www.baidu.com");
         Thread.sleep(5000);
         BaseHtmlReport.createScreenshots(wd);
-//        wd.get("http://www.bing.com");
-//        Thread.sleep(10000);
-//        BaseHtmlReport.createScreenshots(wd);
+        wd.get("http://www.bing.com");
+        Thread.sleep(10000);
+        BaseHtmlReport.createScreenshots(wd);
     }
 
- //    @Test
+     //@Test
     public void MyfristTest6() throws InterruptedException {
-        // WebDriver wd = DriverFactory.getDriver();
         wd.get("http://www.baidu.com");
         Thread.sleep(5000);
         BaseHtmlReport.createScreenshots(wd);
@@ -36,15 +38,15 @@ public class Mytest {
 
     }
 
-     @Test
+    // @Test
     public void MyfristTest7() throws InterruptedException {
-//        wd.get("http://www.baidu.com");
-//        Thread.sleep(5000);
-//        BaseHtmlReport.createScreenshots(wd);
-        wd.get("http://www.google.com");
-//        Thread.sleep(10000);
+        wd.get("http://www.baidu.com");
+        Thread.sleep(5000);
         BaseHtmlReport.createScreenshots(wd);
-//        wd.get("http://www.baidu.com");
+        wd.get("http://www.google.com");
+        Thread.sleep(10000);
+        BaseHtmlReport.createScreenshots(wd);
+        wd.get("http://www.baidu.com");
         Thread.sleep(5000);
         Assert.assertTrue(false);
     }

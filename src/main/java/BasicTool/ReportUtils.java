@@ -16,10 +16,12 @@ public class ReportUtils extends ReportNGUtils {
             return output;
         }
         List<String> attribute = (List<String>) result.getAttribute("screenshots");
-        List<String> screenshots = attribute; 
-        if(!screenshots.isEmpty()){
-            for(String str:screenshots){
-                String str1 = "<a href=\"../../" + str + "\" target=\"_blank\">Screenshot</a>";
+        List<String> screenshots = attribute;
+        if (!screenshots.isEmpty()) {
+            for (String str : screenshots) {
+                // String str1 = "<a href=\"../../" + str + "\" target=\"_blank\">Screenshot</a>";
+
+                String str1 = "<li><img src=\"../../" + str + "\" alt=\"\"+ data-large-src=\"../../" + str + "\"></li>";
                 output.add(str1);
             }
         }
