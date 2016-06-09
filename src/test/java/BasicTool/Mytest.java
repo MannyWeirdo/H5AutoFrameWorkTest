@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -12,23 +13,10 @@ import org.testng.annotations.Test;
 public class Mytest {
 	public WebDriver wd;
 
-	@FindBy(css = "#kw")
-	private WebElement searchTextField;
-
-	@FindBy(css = "#su")
-	private WebElement clickButton;
-
-	@FindBy(css = "#sb_form_q")
-	private WebElement bSearchTextField;
-
-	@FindBy(css = "#sb_form_go")
-	private WebElement bClickButton;
-
 	@BeforeMethod
 	public void init() {
 		wd = DriverFactory.createNewDriver();
 	}
-
 	// @Test
 	public void MyfristTest5() throws InterruptedException {
 		wd.get("http://www.jiedaibao.com/pcIndex.html");
@@ -78,9 +66,10 @@ public class Mytest {
 	@Test
 	public void MyfristTest6() throws InterruptedException {
 		wd.get("http://www.baidu.com");
-		Thread.sleep(3000);
-		wd.findElement(By.id("kw")).sendKeys("CoderInfo");
-		wd.findElement(By.id("su")).click();
+		baiduPage page = new baiduPage(wd);
+		page.MyTestFunction();
+//		wd.findElement(By.id("kw")).sendKeys("CoderInfo");
+//		wd.findElement(By.id("su")).click();
 		// searchTextField.sendKeys("Symbio´óÉµ±Æ¹«Ë¾");
 		// clickButton.click();
 		// BaseHtmlReport.createScreenshots(wd);
