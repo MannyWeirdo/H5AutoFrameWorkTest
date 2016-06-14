@@ -8,11 +8,17 @@ import org.testng.annotations.BeforeMethod;
 public abstract class AbstractTestCases {
     public static WebDriver wd;
 
+    /**
+     * Init driver
+     */
     @BeforeMethod
     public void initDriver() {
         wd = DriverFactory.createNewDriver();
     }
 
+    /**
+     * Destory driver
+     */
     @AfterMethod
     public void destoryDriver() {
         DriverFactory.CloseDriver();
