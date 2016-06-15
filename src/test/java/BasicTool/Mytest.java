@@ -4,7 +4,7 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Mytest extends AbstractTestCases {
-    // @Test
+     @Test
     public void MyfristTest5() throws InterruptedException {
         wd.get("http://www.jiedaibao.com/pcIndex.html");
         Thread.sleep(5000);
@@ -68,7 +68,7 @@ public class Mytest extends AbstractTestCases {
 
     }
 
-     @Test
+    @Test
     public void MyfristTest7() throws InterruptedException {
 
         wd.get("http://www.jiedaibao.com/pcIndex.html");
