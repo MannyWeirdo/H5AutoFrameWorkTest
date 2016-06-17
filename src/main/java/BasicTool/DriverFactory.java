@@ -7,12 +7,12 @@ import org.slf4j.Logger;
 public class DriverFactory {
     private static WebDriver driver = null;
     private static Logger log = LogFactory.getLogger(DriverFactory.class);
+    private static ConfigUtil configUtil = ConfigUtil.getConfigUtil();
 
     private DriverFactory() {
     }
 
     private static WebDriver CreateBroswerDriver() {
-        ConfigUtil configUtil = ConfigUtil.getConfigUtil();
         switch (configUtil.getConfigFileContent("Broswer.type")) {
         case "firefox":
             driver = new FirefoxDriver();
@@ -36,6 +36,7 @@ public class DriverFactory {
                 if (driver == null) {
                     driver = CreateBroswerDriver();
                     driver.manage().window().maximize();
+                    driver.get(configUtil.getConfigFileContent("DefaultURL"));
                     return driver;
                 }
             }
