@@ -9,6 +9,8 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
+import net.coobird.thumbnailator.Thumbnails;
+
 import org.apache.commons.io.FileUtils;
 import org.apache.velocity.VelocityContext;
 import org.openqa.selenium.OutputType;
@@ -75,8 +77,9 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
 
             final File saved = new File("resources/", fileName + ".png");
             FileUtils.copyFile(scrFile, saved);
-
+            //Thumbnails.of("resources/" + fileName + ".png").size(2000, 1000).toFile("resources/" + fileName + ".png");
         } catch (IOException e) {
+            e.printStackTrace();
         }
         list.add("resources/" + fileName + ".png");
 
