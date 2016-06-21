@@ -72,7 +72,7 @@
 						</property>
 						<property>
 							<name>listener</name>
-							<value>BasicTool.BaseHtmlReport</value>
+							<value>Report.BaseHtmlReport</value>
 						</property>
 					</properties>
 					<workingDirectory>target/</workingDirectory>

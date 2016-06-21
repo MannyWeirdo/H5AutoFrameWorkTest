@@ -19,7 +19,7 @@ public class ReportUtils extends ReportNGUtils {
         if (!screenshots.isEmpty()) {
             for (String str : screenshots) {
                 String str1 = "<li><a href=\"../../" + str + "\" target=\"_blank\"><img src=\"../../" + str
-                        + "\" width=\"80%\" height=\"50%\" alt=\"\"></a></li>";
+                        + "\" alt=\"\"></a></li>";
                 output.add(str1);
             }
         }
