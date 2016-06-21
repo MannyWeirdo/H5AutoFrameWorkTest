@@ -1,9 +1,11 @@
-package BasicTool;
+package TestCases;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+
+import ToolFactory.DriverFactory;
 
 public abstract class AbstractTestCases {
     public static WebDriver wd;

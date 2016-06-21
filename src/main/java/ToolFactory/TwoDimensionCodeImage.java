@@ -1,4 +1,4 @@
-package BasicTool.QRCodeTool;
+package ToolFactory;
 
 import java.awt.image.BufferedImage;
 

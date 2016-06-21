@@ -1,4 +1,4 @@
-package BasicTool;
+package Report;
 
 import java.io.File;
 import java.io.IOException;
@@ -23,6 +23,9 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 import org.uncommons.reportng.HTMLReporter;
+
+import ToolFactory.DriverFactory;
+import ToolFactory.LogFactory;
 
 public class BaseHtmlReport extends HTMLReporter implements ITestListener {
 
@@ -133,7 +136,7 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
         takeScreenshots(result);
     }
 
-    public static String getRandomString(int length) { // length表示生成字符串的长度
+    public static String getRandomString(int length) { // length表示生�?字符串的长度
         String base = "abcdefghijklmnopqrstuvwxyz0123456789";
         Random random = new Random();
         StringBuffer sb = new StringBuffer();
