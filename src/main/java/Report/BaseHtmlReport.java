@@ -9,8 +9,6 @@ import java.util.Date;
 import java.util.List;
 import java.util.Random;
 
-import net.coobird.thumbnailator.Thumbnails;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.velocity.VelocityContext;
 import org.openqa.selenium.OutputType;
@@ -18,14 +16,14 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.Augmenter;
 import org.openqa.selenium.remote.RemoteWebDriver;
-import org.slf4j.Logger;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
+import org.apache.log4j.Logger;
 import org.uncommons.reportng.HTMLReporter;
 
-import ToolFactory.DriverFactory;
-import ToolFactory.LogFactory;
+import DriverFactory.DriverFactory;
+import Factory.LogFactory;
 
 public class BaseHtmlReport extends HTMLReporter implements ITestListener {
 
@@ -80,7 +78,8 @@ public class BaseHtmlReport extends HTMLReporter implements ITestListener {
 
             final File saved = new File("resources/", fileName + ".png");
             FileUtils.copyFile(scrFile, saved);
-            //Thumbnails.of("resources/" + fileName + ".png").size(2000, 1000).toFile("resources/" + fileName + ".png");
+            // Thumbnails.of("resources/" + fileName + ".png").size(2000, 1000).toFile("resources/" + fileName +
+            // ".png");
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -1,8 +1,11 @@
-package ToolFactory;
+package DriverFactory;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.slf4j.Logger;
+import org.apache.log4j.Logger;
+
+import BasicTool.ConfigUtil;
+import Factory.LogFactory;
 
 public class DriverFactory {
     private static WebDriver driver = null;
@@ -44,11 +47,10 @@ public class DriverFactory {
         return driver;
     }
 
-    public static WebDriver getCurrentDriver(){
+    public static WebDriver getCurrentDriver() {
         return createNewDriver();
     }
-    
-        
+
     public static void CloseDriver() {
         driver.quit();
         driver = null;
