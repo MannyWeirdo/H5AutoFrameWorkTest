@@ -8,17 +8,16 @@ import org.testng.annotations.Listeners;
 
 import DriverFactory.DriverFactory;
 
-
 @Listeners({ Filter.MethodSelector.class })
 public class AbstractTestCases {
-    public static WebDriver wd;
+    public static WebDriver driver;
 
     /**
      * Init driver
      */
     @BeforeMethod
     public void initDriver() {
-        wd = DriverFactory.createNewDriver();
+        driver = DriverFactory.createNewDriver();
     }
 
     /**

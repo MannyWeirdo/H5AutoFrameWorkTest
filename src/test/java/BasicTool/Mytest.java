@@ -12,44 +12,43 @@ public class Mytest extends AbstractTestCases {
 
     @Test(testName = "1256", groups = { "Payment" }, description = "")
     public void MyfristTest6() throws InterruptedException {
-        wd.get("http://www.jiedaibao.com/pcIndex.html");
-        BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = new NavigationPage(wd);
+        driver.get("http://www.jiedaibao.com/pcIndex.html");
+        BaseHtmlReport.createScreenshots(driver);
+        NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickFunctionDetialLink();
-        BaseHtmlReport.createScreenshots(wd);
+        BaseHtmlReport.createScreenshots(driver);
         navigationPage.clickPayPageLink();
-        BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = new PaymentPage(wd);
-        TestPage m  = new TestPage(wd);
+        BaseHtmlReport.createScreenshots(driver);
+        PaymentPage paymentPage = new PaymentPage(driver);
+        TestPage m = new TestPage(driver);
 
     }
 
     @Test(testName = "12562", groups = { "Payment" })
     public void MyfristTest7() throws InterruptedException {
-        wd.get("http://www.jiedaibao.com/pcIndex.html");
-        BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = new NavigationPage(wd);
+        driver.get("http://www.jiedaibao.com/pcIndex.html");
+        BaseHtmlReport.createScreenshots(driver);
+        NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickFunctionDetialLink();
-        BaseHtmlReport.createScreenshots(wd);
+        BaseHtmlReport.createScreenshots(driver);
         navigationPage.clickPayPageLink();
-        BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = new PaymentPage(wd);
-        TestPage m  = new TestPage(wd);
+        BaseHtmlReport.createScreenshots(driver);
+        PaymentPage paymentPage = new PaymentPage(driver);
+        TestPage m = new TestPage(driver);
 
     }
 
     @Test(testName = "1256", groups = { "Home" })
     public void MyfristTest9() throws InterruptedException {
-        BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = new NavigationPage(wd);
+        BaseHtmlReport.createScreenshots(driver);
+        NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickFunctionDetialLink();
-        BaseHtmlReport.createScreenshots(wd);
+        BaseHtmlReport.createScreenshots(driver);
         navigationPage.clickPayPageLink();
-        BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = new PaymentPage(wd);
-        TestPage m  = new TestPage(wd);
+        BaseHtmlReport.createScreenshots(driver);
+        PaymentPage paymentPage = new PaymentPage(driver);
+        TestPage m = new TestPage(driver);
 
     }
-    
 
 }
