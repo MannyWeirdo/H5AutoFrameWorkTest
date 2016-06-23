@@ -2,7 +2,6 @@ package BasicTool;
 
 import org.testng.annotations.Test;
 
-import Factory.PageFactroy;
 import Page.NavigationPage;
 import Page.PaymentPage;
 import Page.Mytest.TestPage;
@@ -15,13 +14,13 @@ public class Mytest extends AbstractTestCases {
     public void MyfristTest6() throws InterruptedException {
         wd.get("http://www.jiedaibao.com/pcIndex.html");
         BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = PageFactroy.getPageObject(NavigationPage.class, wd);
+        NavigationPage navigationPage = new NavigationPage(wd);
         navigationPage.clickFunctionDetialLink();
         BaseHtmlReport.createScreenshots(wd);
         navigationPage.clickPayPageLink();
         BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = PageFactroy.getPageObject(PaymentPage.class, wd);
-        wd.get("http://www.baidu.com");
+        PaymentPage paymentPage = new PaymentPage(wd);
+        TestPage m  = new TestPage(wd);
 
     }
 
@@ -29,26 +28,26 @@ public class Mytest extends AbstractTestCases {
     public void MyfristTest7() throws InterruptedException {
         wd.get("http://www.jiedaibao.com/pcIndex.html");
         BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = PageFactroy.getPageObject(NavigationPage.class, wd);
+        NavigationPage navigationPage = new NavigationPage(wd);
         navigationPage.clickFunctionDetialLink();
         BaseHtmlReport.createScreenshots(wd);
         navigationPage.clickPayPageLink();
         BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = PageFactroy.getPageObject(PaymentPage.class, wd);
+        PaymentPage paymentPage = new PaymentPage(wd);
+        TestPage m  = new TestPage(wd);
 
     }
 
     @Test(testName = "1256", groups = { "Home" })
     public void MyfristTest9() throws InterruptedException {
-        wd.get("http://www.jiedaibao.com/pcIndex.html");
         BaseHtmlReport.createScreenshots(wd);
-        NavigationPage navigationPage = PageFactroy.getPageObject(NavigationPage.class, wd);
+        NavigationPage navigationPage = new NavigationPage(wd);
         navigationPage.clickFunctionDetialLink();
         BaseHtmlReport.createScreenshots(wd);
         navigationPage.clickPayPageLink();
         BaseHtmlReport.createScreenshots(wd);
-        PaymentPage paymentPage = PageFactroy.getPageObject(PaymentPage.class, wd);
-        TestPage m  = PageFactroy.getPageObject(TestPage.class, wd);
+        PaymentPage paymentPage = new PaymentPage(wd);
+        TestPage m  = new TestPage(wd);
 
     }
     
