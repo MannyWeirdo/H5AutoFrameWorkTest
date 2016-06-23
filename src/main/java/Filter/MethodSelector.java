@@ -33,7 +33,10 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
             if (isExpectedMethod(testMethod))
                 updatedMethodInstance.add(method);
         }
-        return updatedMethodInstance;
+        if (updatedMethodInstance.size() > 0)
+            return updatedMethodInstance;
+        else
+            return methods;
     }
 
     private boolean isExpectedMethod(ITestNGMethod method) {
