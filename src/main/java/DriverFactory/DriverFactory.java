@@ -1,8 +1,12 @@
 package DriverFactory;
 
+import java.net.URL;
+
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.apache.log4j.Logger;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import BasicTool.ConfigUtil;
 import Factory.LogFactory;
@@ -16,19 +20,46 @@ public class DriverFactory {
     }
 
     private static WebDriver CreateBroswerDriver() {
-        switch (configUtil.getConfigFileContent("Broswer.type")) {
-        case "firefox":
-            driver = new FirefoxDriver();
-            return driver;
-        case "chrome":
-            return driver;
-        case "ie":
-            return driver;
-        case "safari":
-            return driver;
-        default:
+        if (configUtil.getConfigFileContent("IsRemoteDriver").equals("false")) {
+            switch (configUtil.getConfigFileContent("Broswer.type")) {
+            case "firefox":
+                driver = new FirefoxDriver();
+                return driver;
+            case "chrome":
+                return driver;
+            case "ie":
+                return driver;
+            case "safari":
+                return driver;
+            default:
+                try {
+                    throw new Exception("Don't support this broswer on local!!!!!");
+                } catch (Exception e) {
+                    e.printStackTrace();
+                    return driver;
+                }
+            }
+        } else {
+            try {
+                switch (configUtil.getConfigFileContent("Broswer.type")) {
+                case "firefox":
+                    DesiredCapabilities dc = DesiredCapabilities.firefox();
+                    driver = new RemoteWebDriver(new URL("http://172.27.51.118:4444/wd/hub"), dc);
+                    return driver;
+                case "chrome":
+                    return driver;
+                case "ie":
+                    return driver;
+                case "safari":
+                    return driver;
+                default:
+                    return driver;
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return driver;
+            }
         }
-        return null;
 
     }
 
