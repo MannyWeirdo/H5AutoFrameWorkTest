@@ -7,7 +7,7 @@ import Page.NavigationPage;
 import Page.PaymentPage;
 import TestCases.AbstractTestCases;
 
-import com.intuit.tools.reporter.WebReporter;
+import com.customize.reporter.WebReporter;
 
 public class Mytest extends AbstractTestCases {
 
