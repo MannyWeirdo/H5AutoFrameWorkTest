@@ -4,7 +4,9 @@ import java.net.URL;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
@@ -26,8 +28,14 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 return driver;
             case "chrome":
+                System.setProperty("webdriver.chrome.driver", configUtil.getConfigFileContent("chromeDriverPath"));
+                DesiredCapabilities dc = DesiredCapabilities.chrome();
+                driver = new ChromeDriver(dc);
                 return driver;
             case "ie":
+                System.setProperty("webdriver.ie.driver", configUtil.getConfigFileContent("ieDriverPath"));
+                 dc = DesiredCapabilities.internetExplorer();
+                driver = new InternetExplorerDriver(dc);
                 return driver;
             case "safari":
                 return driver;
@@ -41,16 +49,25 @@ public class DriverFactory {
             }
         } else {
             try {
+                URL remoteUrl = new URL(configUtil.getConfigFileContent("remoteDriverURL"));
                 switch (configUtil.getConfigFileContent("Broswer.type")) {
                 case "firefox":
                     DesiredCapabilities dc = DesiredCapabilities.firefox();
-                    driver = new RemoteWebDriver(new URL("http://172.27.51.118:4444/wd/hub"), dc);
+                    driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 case "chrome":
+                    System.setProperty("webdriver.chrome.driver", configUtil.getConfigFileContent("chromeDriverPath"));
+                    dc = DesiredCapabilities.chrome();
+                    driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
-                case "ie":
+                case "ie": 
+                    System.setProperty("webdriver.ie.driver", configUtil.getConfigFileContent("ieDriverPath"));
+                    dc = DesiredCapabilities.internetExplorer();
+                    driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 case "safari":
+                    dc = DesiredCapabilities.safari();
+                    driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 default:
                     return driver;
