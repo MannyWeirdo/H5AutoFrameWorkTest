@@ -28,13 +28,15 @@ public class DriverFactory {
                 driver = new FirefoxDriver();
                 return driver;
             case "chrome":
-                System.setProperty("webdriver.chrome.driver", configUtil.getConfigFileContent("chromeDriverPath"));
+                System.setProperty("webdriver.chrome.driver",
+                        System.getProperty("user.dir") + configUtil.getConfigFileContent("Chrome.DriverPath"));
                 DesiredCapabilities dc = DesiredCapabilities.chrome();
                 driver = new ChromeDriver(dc);
                 return driver;
             case "ie":
-                System.setProperty("webdriver.ie.driver", configUtil.getConfigFileContent("ieDriverPath"));
-                 dc = DesiredCapabilities.internetExplorer();
+                System.setProperty("webdriver.ie.driver",
+                        configUtil.getConfigFileContent("InternetExplorer.DriverPath"));
+                dc = DesiredCapabilities.internetExplorer();
                 driver = new InternetExplorerDriver(dc);
                 return driver;
             case "safari":
@@ -56,12 +58,13 @@ public class DriverFactory {
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 case "chrome":
-                    System.setProperty("webdriver.chrome.driver", configUtil.getConfigFileContent("chromeDriverPath"));
+                    System.setProperty("webdriver.chrome.driver", configUtil.getConfigFileContent("Chrome.DriverPath"));
                     dc = DesiredCapabilities.chrome();
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
-                case "ie": 
-                    System.setProperty("webdriver.ie.driver", configUtil.getConfigFileContent("ieDriverPath"));
+                case "ie":
+                    System.setProperty("webdriver.ie.driver",
+                            configUtil.getConfigFileContent("InternetExplorer.DriverPath"));
                     dc = DesiredCapabilities.internetExplorer();
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
@@ -104,4 +107,7 @@ public class DriverFactory {
         driver = null;
     }
 
+    public static void main(String[] args) {
+        System.out.println(System.getProperty("user.dir") + configUtil.getConfigFileContent("Chrome.DriverPath"));
+    }
 }
