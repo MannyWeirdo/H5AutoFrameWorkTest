@@ -1,6 +1,5 @@
 package TestCases;
 
-import java.io.IOException;
 
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
@@ -8,7 +7,8 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 
-import BasicTool.ConfigUtil;
+import com.customize.reporter.WebReporter;
+
 import DriverFactory.DriverFactory;
 
 @Listeners({ Filter.MethodSelector.class })

@@ -1,6 +1,5 @@
 package Filter;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,10 +15,13 @@ import TestCases.AbstractTestCases;
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
 
 	{
-		System.out.println(System.getProperty("IsRemoteDriver"));
-		System.out.println(System.getProperty("testName"));
-		System.out.println(System.getProperty("Group"));
-		ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
+		try{
+			if(System.getProperty("Group")!=null|System.getProperty("Group")!=null|System.getProperty("Group")!=null)
+				ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
+		}catch(Exception e){
+			System.out.println("Can't use -D method to add paramater!!!");
+		}
+
 	}
 
 	private ArrayList<String> testcaseIDList = new ArrayList<String>();
