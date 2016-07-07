@@ -1,5 +1,6 @@
 package Filter;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,43 +15,47 @@ import TestCases.AbstractTestCases;
 
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
 
-    private ArrayList<String> testcaseIDList = new ArrayList<String>();
+	{
+		System.out.println(System.getProperty("IsRemoteDriver"));
+		System.out.println(System.getProperty("testName"));
+		System.out.println(System.getProperty("Group"));
+		ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
+	}
 
-    public MethodSelector() {
-        String TCID = ConfigUtil.getConfigUtil().getConfigFileContent("testName");
-        if (TCID == null)
-            return;
-        for (String testName : TCID.split(",")) {
-            testcaseIDList.add(testName);
-        }
-    }
+	private ArrayList<String> testcaseIDList = new ArrayList<String>();
 
-    @Override
-    public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
-        List<IMethodInstance> updatedMethodInstance = new ArrayList<IMethodInstance>();
-        for (IMethodInstance method : methods) {
-            ITestNGMethod testMethod = method.getMethod();
-            if (isExpectedMethod(testMethod))
-                updatedMethodInstance.add(method);
-        }
-        if (updatedMethodInstance.size() > 0)
-            return updatedMethodInstance;
-        else
-            return methods;
-    }
+	public MethodSelector() {
+		String TCID = ConfigUtil.getConfigUtil().getConfigFileContent("testName");
+		if (TCID == null)
+			return;
+		for (String testName : TCID.split(",")) {
+			testcaseIDList.add(testName);
+		}
+	}
 
-    private boolean isExpectedMethod(ITestNGMethod method) {
+	@Override
+	public List<IMethodInstance> intercept(List<IMethodInstance> methods, ITestContext context) {
+		List<IMethodInstance> updatedMethodInstance = new ArrayList<IMethodInstance>();
+		for (IMethodInstance method : methods) {
+			ITestNGMethod testMethod = method.getMethod();
+			if (isExpectedMethod(testMethod))
+				updatedMethodInstance.add(method);
+		}
+			return updatedMethodInstance;
+	}
 
-        Test testMethod = method.getConstructorOrMethod().getMethod().getAnnotation(Test.class);
-        String testName = testMethod.testName();
-        if (!testcaseIDList.isEmpty() && !testcaseIDList.contains(testName))
-            return false;
-        String currretTestLocale = GROUP.getCurrentGroup();
-        for (String group : method.getGroups()) {
-            if (currretTestLocale.equals(group))
-                return true;
-        }
-        return false;
-    }
+	private boolean isExpectedMethod(ITestNGMethod method) {
+
+		Test testMethod = method.getConstructorOrMethod().getMethod().getAnnotation(Test.class);
+		String testName = testMethod.testName();
+		if (!testcaseIDList.isEmpty() && !testcaseIDList.contains(testName))
+			return false;
+		String currretTestLocale = GROUP.getCurrentGroup();
+		for (String group : method.getGroups()) {
+			if (currretTestLocale.equals(group))
+				return true;
+		}
+		return false;
+	}
 
 }
