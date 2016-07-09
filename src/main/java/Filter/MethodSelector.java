@@ -16,7 +16,7 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
 
 	{
 		try{
-			if(System.getProperty("Group")!=null|System.getProperty("Group")!=null|System.getProperty("Group")!=null)
+			if(System.getProperty("Group")!=null|System.getProperty("testName")!=null|System.getProperty("IsRemoteDriver")!=null)
 				ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
 		}catch(Exception e){
 			System.out.println("Can't use -D method to add paramater!!!");

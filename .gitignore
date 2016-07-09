@@ -1,8 +1,9 @@
 /target/
-
+src/.DS_Store
 .classpath
 .project
 .settings/
 test-output/
 velocity.log
 /resources/
+.DS_Store
