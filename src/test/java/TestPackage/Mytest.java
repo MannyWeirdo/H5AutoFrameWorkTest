@@ -1,5 +1,5 @@
 
-package BasicTool;
+package TestPackage;
 
 import org.testng.annotations.Test;
 
