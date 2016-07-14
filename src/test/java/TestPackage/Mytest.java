@@ -3,6 +3,8 @@ package TestPackage;
 
 import org.testng.annotations.Test;
 
+import com.customize.reporter.WebReporter;
+
 import Page.NavigationPage;
 import Page.NewListPage;
 import Page.PCHomePage;
@@ -22,6 +24,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickAboutWeLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
+        WebReporter.log(driver, driver.getTitle(), true, true);
 
     }
 
@@ -36,6 +39,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickAboutWeLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
+        WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
     @Test(testName = "1257", groups = { "Home" })
@@ -49,6 +53,8 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickAboutWeLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+
     }
 
     // @Test(testName = "1258", groups = { "Home" })
