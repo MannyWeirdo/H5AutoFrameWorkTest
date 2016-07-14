@@ -1,6 +1,7 @@
 
 package TestPackage;
 
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
@@ -54,6 +55,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
+        Assert.assertTrue(false);
 
     }
 
