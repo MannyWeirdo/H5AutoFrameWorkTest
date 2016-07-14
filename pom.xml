@@ -12,7 +12,6 @@
 	</parent>
 
 	<dependencies>
-
 		<dependency>
 			<groupId>com.lendingtreasure</groupId>
 			<artifactId>PageObject</artifactId>
@@ -21,34 +20,19 @@
 
 	</dependencies>
 
-	<build>
-		<plugins>
-
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-compiler-plugin</artifactId>
-				<configuration>
-					<source>1.7</source>
-					<target>1.7</target>
-				</configuration>
-			</plugin>
-		</plugins>
-	</build>
-
 
 	<repositories>
-        <repository>
-            <id>JDB</id>
-            <name>H5AutomationNexus</name>
-            <url>http://localhost:8081/nexus/content/repositories/JDB</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
-
+		<repository>
+			<id>JDB</id>
+			<name>H5AutomationNexus</name>
+			<url>http://localhost:8081/nexus/content/repositories/JDB</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
 
 </project>

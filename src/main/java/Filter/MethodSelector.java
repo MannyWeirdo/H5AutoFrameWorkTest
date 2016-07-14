@@ -3,6 +3,7 @@ package Filter;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.log4j.Logger;
 import org.testng.IMethodInstance;
 import org.testng.IMethodInterceptor;
 import org.testng.ITestContext;
@@ -13,19 +14,31 @@ import BasicTool.ConfigUtil;
 import TestCases.AbstractTestCases;
 
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
+
+    private static Logger log = Logger.getLogger(MethodSelector.class);
+
+    /**
+     * init System paramaters for testNG
+     */
+
     {
         try {
             if (System.getProperty("Group") != null | System.getProperty("testName") != null
                     | System.getProperty("IsRemoteDriver") != null)
                 ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
         } catch (Exception e) {
-            System.out.println("Can't use -D method to add paramater!!!");
+            log.info("Can't use -D method to add paramater!!!");
         }
 
     }
 
     private ArrayList<String> testcaseIDList = new ArrayList<String>();
 
+    /**
+     * Constractor
+     * 
+     * init testMehtod list
+     */
     public MethodSelector() {
         String TCID = ConfigUtil.getConfigUtil().getConfigFileContent("testName");
         if (TCID == null)
@@ -46,6 +59,12 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
         return updatedMethodInstance;
     }
 
+    /**
+     * verify method whether to belong to running method
+     * 
+     * @param method
+     * @return
+     */
     private boolean isExpectedMethod(ITestNGMethod method) {
 
         Test testMethod = method.getConstructorOrMethod().getMethod().getAnnotation(Test.class);
