@@ -10,7 +10,7 @@ import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.annotations.Test;
 
-import BasicTool.ConfigUtil;
+import BasicTool.Config.ConfigUtil;
 import TestCases.AbstractTestCases;
 
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
@@ -22,13 +22,7 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
      */
 
     {
-        try {
-            if (System.getProperty("Group") != null | System.getProperty("testName") != null
-                    | System.getProperty("IsRemoteDriver") != null)
-                ConfigUtil.setConfigValue("IsRemoteDriver", "testName", "Group");
-        } catch (Exception e) {
-            log.info("Can't use -D method to add paramater!!!");
-        }
+        ConfigUtil.initTestConfig();
 
     }
 
@@ -56,7 +50,12 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
             if (isExpectedMethod(testMethod))
                 updatedMethodInstance.add(method);
         }
+        if (updatedMethodInstance.size() > 0)
+            return updatedMethodInstance;
+        else if (testcaseIDList.size() == 0)
+            return methods;
         return updatedMethodInstance;
+
     }
 
     /**
@@ -71,12 +70,8 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
         String testName = testMethod.testName();
         if (!testcaseIDList.isEmpty() && !testcaseIDList.contains(testName))
             return false;
-        String currretTestLocale = GROUP.getCurrentGroup();
-        for (String group : method.getGroups()) {
-            if (currretTestLocale.equals(group))
-                return true;
-        }
-        return false;
+        else
+            return true;
     }
 
 }

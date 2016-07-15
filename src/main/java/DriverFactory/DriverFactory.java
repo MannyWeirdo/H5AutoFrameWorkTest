@@ -10,7 +10,7 @@ import org.openqa.selenium.ie.InternetExplorerDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
-import BasicTool.ConfigUtil;
+import BasicTool.Config.ConfigUtil;
 import Factory.LogFactory;
 
 public class DriverFactory {
@@ -22,20 +22,20 @@ public class DriverFactory {
     }
 
     private static WebDriver CreateBroswerDriver() {
-        if (configUtil.getConfigFileContent("IsRemoteDriver").equals("false")) {
-            switch (configUtil.getConfigFileContent("Broswer.type")) {
+        if (configUtil.getConfigFileContent("isRemoteDriver").equals("false")) {
+            switch (configUtil.getConfigFileContent("broswerType")) {
             case "firefox":
                 driver = new FirefoxDriver();
                 return driver;
             case "chrome":
                 System.setProperty("webdriver.chrome.driver",
-                        System.getProperty("user.dir") + configUtil.getConfigFileContent("Chrome.DriverPath"));
+                        System.getProperty("user.dir") + configUtil.getConfigFileContent("chromeDriverPath"));
                 DesiredCapabilities dc = DesiredCapabilities.chrome();
                 driver = new ChromeDriver(dc);
                 return driver;
             case "ie":
-                System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")
-                        + configUtil.getConfigFileContent("InternetExplorer.DriverPath"));
+                System.setProperty("webdriver.ie.driver",
+                        System.getProperty("user.dir") + configUtil.getConfigFileContent("internetExplorerDriverPath"));
                 dc = DesiredCapabilities.internetExplorer();
                 driver = new InternetExplorerDriver(dc);
                 return driver;
@@ -52,20 +52,20 @@ public class DriverFactory {
         } else {
             try {
                 URL remoteUrl = new URL(configUtil.getConfigFileContent("remoteDriverURL"));
-                switch (configUtil.getConfigFileContent("Broswer.type")) {
+                switch (configUtil.getConfigFileContent("broswerType")) {
                 case "firefox":
                     DesiredCapabilities dc = DesiredCapabilities.firefox();
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 case "chrome":
                     System.setProperty("webdriver.chrome.driver",
-                            System.getProperty("user.dir") + configUtil.getConfigFileContent("Chrome.DriverPath"));
+                            System.getProperty("user.dir") + configUtil.getConfigFileContent("chromeDriverPath"));
                     dc = DesiredCapabilities.chrome();
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
                 case "ie":
                     System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")
-                            + configUtil.getConfigFileContent("InternetExplorer.DriverPath"));
+                            + configUtil.getConfigFileContent("internetExplorerDriverPath"));
                     dc = DesiredCapabilities.internetExplorer();
                     driver = new RemoteWebDriver(remoteUrl, dc);
                     return driver;
@@ -91,7 +91,7 @@ public class DriverFactory {
                 if (driver == null) {
                     driver = CreateBroswerDriver();
                     driver.manage().window().maximize();
-                    driver.get(configUtil.getConfigFileContent("DefaultURL"));
+                    driver.get(configUtil.getConfigFileContent("defaultURL"));
                     return driver;
                 }
             }
