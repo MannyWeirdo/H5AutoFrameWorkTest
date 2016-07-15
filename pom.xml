@@ -30,9 +30,22 @@
 				<enabled>true</enabled>
 			</releases>
 			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+
+		<repository>
+			<id>JDBSnapshot</id>
+			<name>H5AutomationNexusSnapshot</name>
+			<url>http://localhost:8081/nexus/content/repositories/JDBSnapshot</url>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
+			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
 		</repository>
+
 	</repositories>
 
 </project>
