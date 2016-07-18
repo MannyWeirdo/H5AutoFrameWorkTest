@@ -34,8 +34,9 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
      * init testMehtod list
      */
     public MethodSelector() {
+
         String TCID = ConfigUtil.getConfigUtil().getConfigFileContent("testName");
-        if (TCID == null)
+        if (TCID == null || TCID.isEmpty())
             return;
         for (String testName : TCID.split(",")) {
             testcaseIDList.add(testName);
