@@ -1,4 +1,4 @@
-package TestPackage.NavigationPage;
+package TestPackage.navigationPageTest;
 
 import org.testng.annotations.Test;
 
