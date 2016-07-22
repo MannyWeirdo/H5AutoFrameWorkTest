@@ -22,7 +22,7 @@ public class Mytest extends AbstractTestCases {
         NewListPage newListPage = navigationPage.clickNewListLink();
         navigationPage.clickFunctionDetaillLink();
         navigationPage.clickPromotionAndCooperationLink();
-        navigationPage.clickAboutWeLink();
+        navigationPage.clickAboutUsLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -37,7 +37,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickNewListLink();
         navigationPage.clickFunctionDetaillLink();
         navigationPage.clickPromotionAndCooperationLink();
-        navigationPage.clickAboutWeLink();
+        navigationPage.clickAboutUsLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -51,7 +51,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickNewListLink();
         navigationPage.clickFunctionDetaillLink();
         navigationPage.clickPromotionAndCooperationLink();
-        navigationPage.clickAboutWeLink();
+        navigationPage.clickAboutUsLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
