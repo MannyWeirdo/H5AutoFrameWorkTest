@@ -2,6 +2,8 @@ package TestPackage.opromoterApply;
 
 import org.testng.annotations.Test;
 
+import com.customize.reporter.WebReporter;
+
 import DataBean.OpromoterBean;
 import DataTool.DataFactory;
 import Page.NavigationPage;
@@ -18,8 +20,8 @@ public class TestPromoterApply extends AbstractTestCases {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
         opromoterBean = DataFactory.GetData(OpromoterBean.class);
-        opromoterApplyPage.fillOpromoterInformation(opromoterBean);
-        opromoterApplyPage.clickSubmitButton(); 
+        opromoterApplyPage.fillOpromoterInformation(opromoterBean, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
     // @Test(description = "申请为推广商企业版")
@@ -28,8 +30,8 @@ public class TestPromoterApply extends AbstractTestCases {
         opromoterBean = DataFactory.GetData(OpromoterBean.class);
         opromoterBean.setPromotionDirection(1);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterApplyPage.fillOpromoterInformation(opromoterBean);
-        opromoterApplyPage.clickSubmitButton();
+        opromoterApplyPage.fillOpromoterInformation(opromoterBean, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
     // @Test(description = "个人版企业版连接")
@@ -38,6 +40,7 @@ public class TestPromoterApply extends AbstractTestCases {
         opromoterApplyPage.clickPersonOpromoterLink();
         navigationPage.clickPromoterApplyLink();
         opromoterApplyPage.clickCompanyOpromoterLink();
+        WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
 }
