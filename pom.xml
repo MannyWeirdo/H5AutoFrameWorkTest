@@ -17,34 +17,11 @@
 			<artifactId>PageObject</artifactId>
 			<version>1.0-SNAPSHOT</version>
 		</dependency>
+		<dependency>
+			<groupId>com.Common</groupId>
+			<artifactId>DriverFactory</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
 	</dependencies>
-
-
-	<repositories>
-		<repository>
-			<id>JDB</id>
-			<name>H5AutomationNexus</name>
-			<url>http://localhost:8081/nexus/content/repositories/JDB</url>
-			<releases>
-				<enabled>true</enabled>
-			</releases>
-			<snapshots>
-				<enabled>false</enabled>
-			</snapshots>
-		</repository>
-
-		<repository>
-			<id>JDBSnapshot</id>
-			<name>H5AutomationNexusSnapshot</name>
-			<url>http://localhost:8081/nexus/content/repositories/JDBSnapshot</url>
-			<releases>
-				<enabled>false</enabled>
-			</releases>
-			<snapshots>
-				<enabled>true</enabled>
-			</snapshots>
-		</repository>
-
-	</repositories>
 
 </project>

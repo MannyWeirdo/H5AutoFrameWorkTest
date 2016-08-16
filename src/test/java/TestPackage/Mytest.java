@@ -14,7 +14,7 @@ import TestCases.AbstractTestCases;
 
 public class Mytest extends AbstractTestCases {
 
-    @Test(testName = "1256")
+    // @Test(testName = "1256")
     public void MyfristTest10() throws Exception {
         System.out.println("********MyfristTest10 HOME************");
         PCHomePage pCHomePage = new PCHomePage(driver);
@@ -25,11 +25,10 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickAboutUsLink();
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
-        WebReporter.log(driver, driver.getTitle(), true, true);
 
     }
 
-    @Test(testName = "1257")
+    // @Test(testName = "1257")
     public void MyfristTest11() throws Exception {
         System.out.println("********MyfristTest11 Payment************");
         PCHomePage pCHomePage = new PCHomePage(driver);
@@ -38,12 +37,11 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickFunctionDetaillLink();
         navigationPage.clickPromoterApplyLink();
         navigationPage.clickAboutUsLink();
-        navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(testName = "1257")
+    // @Test(testName = "1257")
     public void MyfristTest12() throws Exception {
         System.out.println("********MyfristTest12 HOME************");
         PCHomePage pCHomePage = new PCHomePage(driver);
@@ -63,6 +61,41 @@ public class Mytest extends AbstractTestCases {
     public void MyfristTest13() throws Exception {
         System.out.println("********MyfristTest13 HOME************");
         TestPage testPage = new TestPage(driver);
+    }
+
+    @Test(testName = "1")
+    public void MyfristTest14() throws Exception {
+        System.out.println("********MyfristTest10 HOME************");
+        WebReporter.log(appiumDirver, true, true, true);
+
+    }
+
+    // @Test(testName = "2")
+    public void MyfristTest15() throws Exception {
+        System.out.println("********MyfristTest10 HOME************");
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+
+    }
+
+    // @Test(testName = "3")
+    public void MyfristTest16() throws Exception {
+        System.out.println("********MyfristTest10 HOME************");
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+
+    }
+
+    // @Test(testName = "4")
+    public void MyfristTest17() throws Exception {
+        System.out.println("********MyfristTest10 HOME************");
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+        WebReporter.log(appiumDirver, true, true, true);
+        Assert.assertTrue(false);
+
     }
 
 }
