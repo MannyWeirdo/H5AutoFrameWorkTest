@@ -1,16 +1,15 @@
 
-package TestPackage;
+package testPackage;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import Page.NavigationPage;
-import Page.NewListPage;
-import Page.PCHomePage;
-import Page.Mytest.TestPage;
 import TestCases.AbstractTestCases;
+import page.NavigationPage;
+import page.NewListPage;
+import page.PCHomePage;
 
 public class Mytest extends AbstractTestCases {
 
@@ -55,12 +54,6 @@ public class Mytest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
         Assert.assertTrue(false);
 
-    }
-
-    // @Test(testName = "1258", groups = { "Home" })
-    public void MyfristTest13() throws Exception {
-        System.out.println("********MyfristTest13 HOME************");
-        TestPage testPage = new TestPage(driver);
     }
 
     @Test(testName = "1")

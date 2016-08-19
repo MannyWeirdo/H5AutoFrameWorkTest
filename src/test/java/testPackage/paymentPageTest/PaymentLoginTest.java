@@ -1,14 +1,14 @@
-package TestPackage.paymentPageTest;
+package testPackage.paymentPageTest;
 
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import BasicTool.Config.ConfigUtil;
-import Page.NavigationPage;
-import Page.Payment.PaymentBalancePage;
-import Page.Payment.PaymentLoginPage;
 import TestCases.AbstractTestCases;
+import basicTool.config.ConfigUtil;
+import page.NavigationPage;
+import page.payment.PaymentBalancePage;
+import page.payment.PaymentLoginPage;
 
 public class PaymentLoginTest extends AbstractTestCases {
     // @Test(testName = "", description = "在线充值IOS扫描二维码登录")

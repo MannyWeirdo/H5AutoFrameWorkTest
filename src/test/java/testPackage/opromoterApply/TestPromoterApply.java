@@ -1,4 +1,4 @@
-package TestPackage.opromoterApply;
+package testPackage.opromoterApply;
 
 import org.testng.annotations.Test;
 
@@ -6,9 +6,9 @@ import com.customize.reporter.WebReporter;
 
 import DataBean.OpromoterBean;
 import DataTool.DataFactory;
-import Page.NavigationPage;
-import Page.promoterApply.OpromoterApplyPage;
 import TestCases.AbstractTestCases;
+import page.NavigationPage;
+import page.promoterApply.OpromoterApplyPage;
 
 public class TestPromoterApply extends AbstractTestCases {
     NavigationPage navigationPage;

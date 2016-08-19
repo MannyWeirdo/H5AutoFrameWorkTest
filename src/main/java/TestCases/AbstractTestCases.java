@@ -11,7 +11,7 @@ import org.testng.annotations.Listeners;
 
 import com.customize.reporter.WebReporter;
 
-import BasicTool.Config.ConfigUtil;
+import basicTool.config.ConfigUtil;
 import io.appium.java_client.AppiumDriver;
 
 @Listeners({ Filter.MethodSelector.class })

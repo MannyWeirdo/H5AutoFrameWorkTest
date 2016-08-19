@@ -1,11 +1,11 @@
-package TestPackage.navigationPageTest;
+package testPackage.navigationPageTest;
 
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import Page.NavigationPage;
 import TestCases.AbstractTestCases;
+import page.NavigationPage;
 
 public class NavigationToBusinessVersionPage extends AbstractTestCases {
 
