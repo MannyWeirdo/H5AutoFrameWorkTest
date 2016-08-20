@@ -7,8 +7,8 @@ import com.customize.reporter.WebReporter;
 import DataBean.OpromoterBean;
 import DataTool.DataFactory;
 import TestCases.AbstractTestCases;
-import page.NavigationPage;
-import page.promoterApply.OpromoterApplyPage;
+import page.pc.NavigationPage;
+import page.pc.promoterApply.OpromoterApplyPage;
 
 public class TestPromoterApply extends AbstractTestCases {
     NavigationPage navigationPage;

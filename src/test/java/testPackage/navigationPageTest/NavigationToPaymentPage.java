@@ -5,7 +5,7 @@ import org.testng.annotations.Test;
 import com.customize.reporter.WebReporter;
 
 import TestCases.AbstractTestCases;
-import page.NavigationPage;
+import page.pc.NavigationPage;
 
 public class NavigationToPaymentPage extends AbstractTestCases {
 

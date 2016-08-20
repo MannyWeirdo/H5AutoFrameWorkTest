@@ -6,9 +6,9 @@ import com.customize.reporter.WebReporter;
 
 import TestCases.AbstractTestCases;
 import basicTool.config.ConfigUtil;
-import page.NavigationPage;
-import page.payment.PaymentBalancePage;
-import page.payment.PaymentLoginPage;
+import page.pc.NavigationPage;
+import page.pc.payment.PaymentBalancePage;
+import page.pc.payment.PaymentLoginPage;
 
 public class PaymentLoginTest extends AbstractTestCases {
     // @Test(testName = "", description = "在线充值IOS扫描二维码登录")

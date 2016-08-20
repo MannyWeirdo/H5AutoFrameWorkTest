@@ -7,9 +7,9 @@ import org.testng.annotations.Test;
 import com.customize.reporter.WebReporter;
 
 import TestCases.AbstractTestCases;
-import page.NavigationPage;
-import page.NewListPage;
-import page.PCHomePage;
+import page.pc.NavigationPage;
+import page.pc.NewListPage;
+import page.pc.PCHomePage;
 
 public class Mytest extends AbstractTestCases {
 
