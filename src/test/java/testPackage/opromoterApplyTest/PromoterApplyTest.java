@@ -8,14 +8,15 @@ import DataBean.OpromoterBean;
 import DataTool.DataFactory;
 import TestCases.AbstractTestCases;
 import page.pc.NavigationPage;
+import page.pc.promoterApply.CompanyOpromoterPage;
 import page.pc.promoterApply.OpromoterApplyPage;
 
-public class TestPromoterApplyTest extends AbstractTestCases {
+public class PromoterApplyTest extends AbstractTestCases {
     NavigationPage navigationPage;
     OpromoterBean opromoterBean;
     OpromoterApplyPage opromoterApplyPage;
 
-    @Test(description = "申请为推广商个人版")
+    //@Test(description = "申请为推广商个人版")
     public void testPersonPromoterApply() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -34,12 +35,12 @@ public class TestPromoterApplyTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(description = "个人版企业版连接")
+    @Test(description = "企业版推广联系方式")
     public void testPromoterLink() throws Exception {
+    	navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterApplyPage.clickPersonOpromoterLink();
-        navigationPage.clickPromoterApplyLink();
-        opromoterApplyPage.clickCompanyOpromoterLink();
+        CompanyOpromoterPage companyOpromoterPage=opromoterApplyPage.clickCompanyOpromoterLink();
+        companyOpromoterPage.searchCompanyPromoter("北京");
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
