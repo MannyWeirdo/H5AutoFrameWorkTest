@@ -1,4 +1,4 @@
-package testPackage.opromoterApply;
+package testPackage.opromoterApplyTest;
 
 import org.testng.annotations.Test;
 
@@ -10,7 +10,7 @@ import TestCases.AbstractTestCases;
 import page.pc.NavigationPage;
 import page.pc.promoterApply.OpromoterApplyPage;
 
-public class TestPromoterApply extends AbstractTestCases {
+public class TestPromoterApplyTest extends AbstractTestCases {
     NavigationPage navigationPage;
     OpromoterBean opromoterBean;
     OpromoterApplyPage opromoterApplyPage;

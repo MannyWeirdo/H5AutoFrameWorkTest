@@ -9,7 +9,7 @@ import com.customize.reporter.WebReporter;
 import TestCases.AbstractTestCases;
 import page.pc.NavigationPage;
 import page.pc.NewListPage;
-import page.pc.PCHomePage;
+import page.pc.homePage.PCHomePage;
 
 public class Mytest extends AbstractTestCases {
 
