@@ -1,5 +1,6 @@
 package testPackage.pcHomePageTest;
 
+import org.springframework.beans.factory.xml.DelegatingEntityResolver;
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
@@ -9,6 +10,52 @@ import page.pc.NavigationPage;
 import page.pc.homePage.PCHomePage;
 
 public class PCHomePageTest extends AbstractTestCases {
+    
+   // @Test(testName ="", description = "点击切换到 first banner")
+    public void pointerFirstBannerButton() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.pointerFirstBannerButton();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+   // @Test(testName = "", description = "点击切换到 second banner")
+    public void pointerSecondBannerButton() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.pointerSecondBannerButton();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+   // @Test(testName = "", description = "切换至first banner 点击跳转至企业版")
+    public void goToBusinessVersionPage() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.goToBusinessVersionPage();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+  //  @Test(testName = "", description = "切换至second banner后，立刻下载QR")
+    public void downloadNow() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.downloadNow();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+  //  @Test(testName = "", description = "切换至second banner后，去观看视频")
+    public void toWatchVideo() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.toWatchVideo();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+    @Test(testName = "", description = "切换至second banner后，点击play button 播放视频")
+    public void clickAndPlayVideo() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.clickAndPlayVideo();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
 
    // @Test(testName = "1", description = "扫二维码下载")
     public void moveToDownloadByQRCode() throws Exception {
@@ -40,7 +87,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-     @Test(testName = "4", description = "Android下载")
+  //   @Test(testName = "4", description = "Android下载")
     public void movetoDownloadNowByAndroid() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
