@@ -4,12 +4,12 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import TestCases.AbstractTestCases;
 import dataBean.pc.opromoter.OpromoterBean;
 import dataTool.DataFactory;
 import page.pc.NavigationPage;
 import page.pc.promoterApply.CompanyOpromoterPage;
 import page.pc.promoterApply.OpromoterApplyPage;
+import testCases.AbstractTestCases;
 
 public class PromoterApplyTest extends AbstractTestCases {
     NavigationPage navigationPage;

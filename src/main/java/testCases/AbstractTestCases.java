@@ -1,4 +1,4 @@
-package TestCases;
+package testCases;
 
 import java.net.MalformedURLException;
 
@@ -14,7 +14,7 @@ import com.customize.reporter.WebReporter;
 import basicTool.config.ConfigUtil;
 import io.appium.java_client.AppiumDriver;
 
-@Listeners({ Filter.MethodSelector.class })
+@Listeners({ filter.MethodSelector.class })
 public class AbstractTestCases {
     public static WebDriver driver;
     public static AppiumDriver appiumDirver;

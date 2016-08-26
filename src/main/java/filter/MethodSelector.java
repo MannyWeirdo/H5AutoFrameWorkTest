@@ -1,4 +1,4 @@
-package Filter;
+package filter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -10,8 +10,8 @@ import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.annotations.Test;
 
-import TestCases.AbstractTestCases;
 import basicTool.config.ConfigUtil;
+import testCases.AbstractTestCases;
 
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
 

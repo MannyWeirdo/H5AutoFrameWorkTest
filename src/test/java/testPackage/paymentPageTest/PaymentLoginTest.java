@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import TestCases.AbstractTestCases;
 import basicTool.config.ConfigUtil;
 import page.pc.NavigationPage;
 import page.pc.payment.PaymentBalancePage;
 import page.pc.payment.PaymentLoginPage;
+import testCases.AbstractTestCases;
 
 public class PaymentLoginTest extends AbstractTestCases {
     // @Test(testName = "", description = "在线充值IOS扫描二维码登录")

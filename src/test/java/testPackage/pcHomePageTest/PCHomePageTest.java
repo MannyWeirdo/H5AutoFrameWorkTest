@@ -5,9 +5,9 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import TestCases.AbstractTestCases;
 import page.pc.NavigationPage;
 import page.pc.homePage.PCHomePage;
+import testCases.AbstractTestCases;
 
 public class PCHomePageTest extends AbstractTestCases {
     

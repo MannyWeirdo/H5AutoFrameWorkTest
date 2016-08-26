@@ -4,8 +4,8 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import TestCases.AbstractTestCases;
 import page.pc.NavigationPage;
+import testCases.AbstractTestCases;
 
 public class NavigationToFunctionDetailPage extends AbstractTestCases {
 
