@@ -2,18 +2,17 @@ package testPackage.opromoterApplyTest;
 
 import org.testng.annotations.Test;
 
-import page.pc.NavigationPage;
-import page.pc.promoterApply.OpromoterApplyPage;
-import basicTool.StringUtilsTool;
-
 import com.customize.reporter.WebReporter;
 
-import DataBean.OpromoterBean;
-import DataTool.DataFactory;
 import TestCases.AbstractTestCases;
+import basicTool.StringUtilsTool;
+import dataBean.pc.opromoter.OpromoterBean;
+import dataTool.DataFactory;
+import page.pc.NavigationPage;
+import page.pc.promoterApply.OpromoterApplyPage;
 
-public class PromoterErrorTest extends AbstractTestCases{
-	NavigationPage navigationPage;
+public class PromoterErrorTest extends AbstractTestCases {
+    NavigationPage navigationPage;
     OpromoterBean opromoterBean;
     OpromoterApplyPage opromoterApplyPage;
 
@@ -26,7 +25,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验身份证号")
     public void testIdCardNo() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -36,7 +35,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验联系电话长度")
     public void testTelePhoneNoLength() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -46,7 +45,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验联系电话输入非数字")
     public void testTelePhoneNo() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -56,7 +55,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验邮箱")
     public void testEmail() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -66,7 +65,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验所在省")
     public void testProvince() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -76,7 +75,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验所在市")
     public void testCity() throws Exception {
         navigationPage = new NavigationPage(driver);
@@ -86,7 +85,7 @@ public class PromoterErrorTest extends AbstractTestCases{
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(description = "校验合作资源")
     public void testCooperSource() throws Exception {
         navigationPage = new NavigationPage(driver);

@@ -7,11 +7,17 @@ import org.testng.annotations.Test;
 import com.customize.reporter.WebReporter;
 
 import TestCases.AbstractTestCases;
+import dataBean.app.login.UserBean;
+import dataTool.DataFactory;
+import page.app.setup.FristSwipePage;
+import page.app.setup.LoginPage;
 import page.pc.NavigationPage;
 import page.pc.NewListPage;
 import page.pc.homePage.PCHomePage;
 
 public class Mytest extends AbstractTestCases {
+
+    UserBean userBean;
 
     // @Test(testName = "1256")
     public void MyfristTest10() throws Exception {
@@ -58,7 +64,10 @@ public class Mytest extends AbstractTestCases {
 
     @Test(testName = "1")
     public void MyfristTest14() throws Exception {
-        System.out.println("********MyfristTest10 HOME************");
+        userBean = DataFactory.GetData(UserBean.class);
+        FristSwipePage fristSwipePage = new FristSwipePage(appiumDirver);
+        LoginPage loginPage = fristSwipePage.finishSwipe();
+        loginPage.login(userBean);
         WebReporter.log(appiumDirver, true, true, true);
 
     }
