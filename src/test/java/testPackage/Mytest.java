@@ -8,7 +8,6 @@ import com.customize.reporter.WebReporter;
 
 import basicTool.appLoginTool;
 import dataBean.app.login.UserBean;
-import page.app.borrowAndLend.BorrowAndLendPage;
 import page.pc.NavigationPage;
 import page.pc.homePage.PCHomePage;
 import testCases.AbstractTestCases;
@@ -35,7 +34,7 @@ public class Mytest extends AbstractTestCases {
 
     @Test(testName = "1")
     public void MyfristTest14() throws Exception {
-        BorrowAndLendPage borrowAndLendPage = appLoginTool.appSimpleAccountLogin();
+        appLoginTool.appSimpleAccountLogin();
         WebReporter.log(appiumDirver, true, true, true);
 
     }
