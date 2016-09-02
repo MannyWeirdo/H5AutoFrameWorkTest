@@ -50,7 +50,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(testName = "", description = "切换至second banner后，点击play button 播放视频")
+   // @Test(testName = "", description = "切换至second banner后，点击play button 播放视频")
     public void clickAndPlayVideo() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -58,7 +58,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "1", description = "扫二维码下载")
+  //   @Test(testName = "1", description = "扫二维码下载")
     public void moveToDownloadByQRCode() throws Exception {
 
         NavigationPage navigationPage = new NavigationPage(driver);
@@ -78,7 +78,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "3", description = "iOS下载")
+ //    @Test(testName = "3", description = "iOS下载")
     public void movetoDownloadNowByiOS() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -88,13 +88,21 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "4", description = "Android下载")
+  //   @Test(testName = "4", description = "Android下载")
     public void movetoDownloadNowByAndroid() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
         pCHomePage.moveToTempPart2();
         pCHomePage.moveToDownloadNowBySystem();
         pCHomePage.moveToDownloadNowByAndroid();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+    @Test(testName = "5", description = "点击 阅读更多 新闻")
+    public void readMoreNews() throws Exception{
+        NavigationPage navigationPage = new NavigationPage(driver);
+        PCHomePage pCHomePage = navigationPage.clickHomePageLink();
+        pCHomePage.readMoreNews();
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
