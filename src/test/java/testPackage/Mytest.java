@@ -1,7 +1,6 @@
 
 package testPackage;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
@@ -16,7 +15,7 @@ public class Mytest extends AbstractTestCases {
 
     UserBean userBean;
 
-    // @Test(testName = "1257")
+    @Test(testName = "1257")
     public void MyfristTest12() throws Exception {
         System.out.println("********MyfristTest12 HOME************");
         PCHomePage pCHomePage = new PCHomePage(driver);
@@ -28,7 +27,7 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickPayPageLink();
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
-        Assert.assertTrue(false);
+        // Assert.assertTrue(false);
 
     }
 

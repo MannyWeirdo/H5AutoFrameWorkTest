@@ -1,7 +1,5 @@
 package testCases;
 
-import java.net.MalformedURLException;
-
 import org.DriverFactory.Factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
@@ -22,10 +20,10 @@ public class AbstractTestCases {
     /**
      * Init driver
      * 
-     * @throws MalformedURLException
+     * @throws Exception
      */
     @BeforeMethod
-    public void initDriver() throws MalformedURLException {
+    public void initDriver() throws Exception {
         switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
         case "pc":
             driver = DriverFactory.createNewDriver();
