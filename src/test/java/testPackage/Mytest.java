@@ -31,7 +31,7 @@ public class Mytest extends AbstractTestCases {
 
     }
 
-    @Test(testName = "1")
+    // @Test(testName = "1")
     public void MyfristTest14() throws Exception {
         appLoginTool.appSimpleAccountLogin();
         WebReporter.log(appiumDirver, true, true, true);

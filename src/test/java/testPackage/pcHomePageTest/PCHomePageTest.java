@@ -10,7 +10,7 @@ import testCases.AbstractTestCases;
 
 public class PCHomePageTest extends AbstractTestCases {
 
-    // @Test(testName ="", description = "点击切换到 first banner")
+    @Test(testName = "", description = "点击切换到 first banner")
     public void pointerFirstBannerButton() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -18,7 +18,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "", description = "点击切换到 second banner")
+    @Test(testName = "", description = "点击切换到 second banner")
     public void pointerSecondBannerButton() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -26,7 +26,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "", description = "切换至first banner 点击跳转至企业版")
+    @Test(testName = "", description = "切换至first banner 点击跳转至企业版")
     public void goToBusinessVersionPage() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -34,7 +34,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "", description = "切换至second banner后，立刻下载QR")
+    @Test(testName = "", description = "切换至second banner后，立刻下载QR")
     public void downloadNow() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -42,7 +42,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "", description = "切换至second banner后，去观看视频")
+    @Test(testName = "", description = "切换至second banner后，去观看视频")
     public void toWatchVideo() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -50,7 +50,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-   // @Test(testName = "", description = "切换至second banner后，点击play button 播放视频")
+    @Test(testName = "", description = "切换至second banner后，点击play button 播放视频")
     public void clickAndPlayVideo() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -58,7 +58,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-  //   @Test(testName = "1", description = "扫二维码下载")
+    @Test(testName = "1", description = "扫二维码下载")
     public void moveToDownloadByQRCode() throws Exception {
 
         NavigationPage navigationPage = new NavigationPage(driver);
@@ -68,7 +68,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "2", description = "按系统下载")
+    @Test(testName = "2", description = "按系统下载")
     public void moveToDownloadBySystem() throws Exception {
 
         NavigationPage navigationPage = new NavigationPage(driver);
@@ -78,7 +78,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
- //    @Test(testName = "3", description = "iOS下载")
+    @Test(testName = "3", description = "iOS下载")
     public void movetoDownloadNowByiOS() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -88,7 +88,7 @@ public class PCHomePageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-  //   @Test(testName = "4", description = "Android下载")
+    @Test(testName = "4", description = "Android下载")
     public void movetoDownloadNowByAndroid() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
@@ -97,9 +97,9 @@ public class PCHomePageTest extends AbstractTestCases {
         pCHomePage.moveToDownloadNowByAndroid();
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
-    
+
     @Test(testName = "5", description = "点击 阅读更多 新闻")
-    public void readMoreNews() throws Exception{
+    public void readMoreNews() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PCHomePage pCHomePage = navigationPage.clickHomePageLink();
         pCHomePage.readMoreNews();
