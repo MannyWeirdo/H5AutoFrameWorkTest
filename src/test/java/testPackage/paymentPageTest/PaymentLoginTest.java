@@ -1,8 +1,9 @@
 package testPackage.paymentPageTest;
 
+import org.ConfigUtil.ConfigUtil;
+
 import com.customize.reporter.WebReporter;
 
-import basicTool.config.ConfigUtil;
 import page.pc.NavigationPage;
 import page.pc.payment.PaymentBalancePage;
 import page.pc.payment.PaymentLoginPage;

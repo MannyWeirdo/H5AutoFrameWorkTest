@@ -1,5 +1,6 @@
 package testCases;
 
+import org.ConfigUtil.ConfigUtil;
 import org.DriverFactory.Factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
 import org.testng.Reporter;
@@ -9,7 +10,6 @@ import org.testng.annotations.Listeners;
 
 import com.customize.reporter.WebReporter;
 
-import basicTool.config.ConfigUtil;
 import io.appium.java_client.AppiumDriver;
 
 @Listeners({ filter.MethodSelector.class })
