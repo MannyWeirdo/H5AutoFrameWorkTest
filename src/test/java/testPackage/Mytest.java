@@ -15,7 +15,11 @@ public class Mytest extends AbstractTestCases {
 
     UserBean userBean;
 
+<<<<<<< Updated upstream
     @Test(testName = "1257")
+=======
+     @Test(testName = "1257")
+>>>>>>> Stashed changes
     public void MyfristTest12() throws Exception {
         System.out.println("********MyfristTest12 HOME************");
         PCHomePage pCHomePage = new PCHomePage(driver);
@@ -31,7 +35,11 @@ public class Mytest extends AbstractTestCases {
 
     }
 
+<<<<<<< Updated upstream
     // @Test(testName = "1")
+=======
+   // @Test(testName = "1")
+>>>>>>> Stashed changes
     public void MyfristTest14() throws Exception {
         appLoginTool.appSimpleAccountLogin();
         WebReporter.log(appiumDirver, true, true, true);
