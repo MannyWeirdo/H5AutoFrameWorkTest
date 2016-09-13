@@ -27,7 +27,15 @@ public class BusinessVersionPageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(testName = "3", description = "纯信用融资了解更多")
+    @Test(testName = "3", description = "start playing the video")
+    public void clickPlayButton() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickStartPlayButton();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+
+    @Test(testName = "4", description = "纯信用融资了解更多")
     public void clickKnowMoreButton() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
@@ -35,4 +43,43 @@ public class BusinessVersionPageTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
+    @Test(testName = "5", description = "click the enroll icon")
+    public void clickEnrollIcon() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickEnrollIcon();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+
+    @Test(testName = "6", description = "click the charge icon")
+    public void clickChargeIcon() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickRechargeIcon();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+
+    @Test(testName = "7", description = "click the payoff icon")
+    public void clickPayoffIcon() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickPayoffIcon();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+
+    @Test(testName = "8", description = "click the financing icon")
+    public void clickFinancingIcon() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickFinancingIcon();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+
+    @Test(testName = "9", description = "click the withdraw icon")
+    public void clickWithdrawIcon() throws Exception {
+        NavigationPage navigationPage = new NavigationPage(driver);
+        BusinessVersionPage businessVerPage = navigationPage.clickBusinessVersionLink();
+        businessVerPage.clickWithdrawIcon();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
 }
