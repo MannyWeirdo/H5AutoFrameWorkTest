@@ -16,7 +16,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     OpromoterBean opromoterBean;
     OpromoterApplyPage opromoterApplyPage;
 
-    @Test(description = "校验姓名")
+    @Test(testName = "opromoterApply4", description = "校验姓名", groups = "pc")
     public void testPersonName() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -26,7 +26,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验身份证号")
+    @Test(testName = "opromoterApply5", description = "校验身份证号", groups = "pc")
     public void testIdCardNo() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -36,7 +36,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验联系电话长度")
+    @Test(testName = "opromoterApply6", description = "校验联系电话长度", groups = "pc")
     public void testTelePhoneNoLength() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -46,7 +46,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验联系电话输入非数字")
+    @Test(testName = "opromoterApply7", description = "校验联系电话输入非数字", groups = "pc")
     public void testTelePhoneNo() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -56,7 +56,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验邮箱")
+    @Test(testName = "opromoterApply8", description = "校验邮箱", groups = "pc")
     public void testEmail() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -66,7 +66,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验所在省")
+    @Test(testName = "opromoterApply9", description = "校验所在省", groups = "pc")
     public void testProvince() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -76,7 +76,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验所在市")
+    @Test(testName = "opromoterApply10", description = "校验所在市", groups = "pc")
     public void testCity() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -86,7 +86,7 @@ public class PromoterErrorTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "校验合作资源")
+    @Test(testName = "opromoterApply11", description = "校验合作资源", groups = "pc")
     public void testCooperSource() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();

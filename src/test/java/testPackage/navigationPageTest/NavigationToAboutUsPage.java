@@ -9,7 +9,7 @@ import testCases.AbstractTestCases;
 
 public class NavigationToAboutUsPage extends AbstractTestCases {
 
-    @Test(testName = "7", description = "通过导航栏进入到关于我们页面")
+    @Test(testName = "navigation7", description = "通过导航栏进入到关于我们页面", groups = "pc")
     public void navigationToPromotionAndCooperationPage() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickAboutUsLink();

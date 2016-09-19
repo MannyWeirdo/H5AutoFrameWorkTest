@@ -9,7 +9,7 @@ import testCases.AbstractTestCases;
 
 public class NavigationToFunctionDetailPage extends AbstractTestCases {
 
-    @Test(testName = "4", description = "通过导航栏进入到功能介绍页面")
+    @Test(testName = "navigation4", description = "通过导航栏进入到功能介绍页面", groups = "pc")
     public void navigationToFunctionDetailPage() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickFunctionDetaillLink();

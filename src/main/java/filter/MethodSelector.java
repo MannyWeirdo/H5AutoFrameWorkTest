@@ -48,13 +48,14 @@ public class MethodSelector extends AbstractTestCases implements IMethodIntercep
         List<IMethodInstance> updatedMethodInstance = new ArrayList<IMethodInstance>();
         for (IMethodInstance method : methods) {
             ITestNGMethod testMethod = method.getMethod();
-            if (isExpectedMethod(testMethod))
-                updatedMethodInstance.add(method);
+            try {
+                if (isExpectedMethod(testMethod) && testMethod.getGroups()[0]
+                        .equals(ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")))
+                    updatedMethodInstance.add(method);
+            } catch (Exception e) {
+            }
+
         }
-        if (updatedMethodInstance.size() > 0)
-            return updatedMethodInstance;
-        else if (testcaseIDList.size() == 0)
-            return methods;
         return updatedMethodInstance;
 
     }

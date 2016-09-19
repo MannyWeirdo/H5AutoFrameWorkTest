@@ -9,7 +9,7 @@ import testCases.AbstractTestCases;
 
 public class NavigationToPaymentPage extends AbstractTestCases {
 
-    @Test(testName = "3", description = "通过导航栏进入到在线充值页面")
+    @Test(testName = "navigation3", description = "通过导航栏进入到在线充值页面", groups = "pc")
     public void navigationToPaymentPage() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickPayPageLink();

@@ -10,7 +10,7 @@ import page.pc.payment.PaymentLoginPage;
 import testCases.AbstractTestCases;
 
 public class PaymentLoginTest extends AbstractTestCases {
-    // @Test(testName = "", description = "在线充值IOS扫描二维码登录")
+    // @Test(testName = "payment1", description = "在线充值IOS扫描二维码登录", groups = "pc")
     public void scanQrcodeLoginFromIOSTest() throws Exception {
         ConfigUtil.getConfigUtil().getTestConfig().setProperty("phonePlatform", "IOS");
         NavigationPage navigationPage = new NavigationPage(driver);
@@ -20,7 +20,7 @@ public class PaymentLoginTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    // @Test(testName = "", description = "在线充值Android扫描二维码登录")
+    // @Test(testName = "payment2", description = "在线充值Android扫描二维码登录", groups = "pc")
     public void scanQrcodeLoginFromAndroidTest() throws Exception {
         ConfigUtil.getConfigUtil().getTestConfig().setProperty("phonePlatform", "ANDRIOD");
         NavigationPage navigationPage = new NavigationPage(driver);

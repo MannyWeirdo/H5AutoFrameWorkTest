@@ -9,7 +9,7 @@ import testCases.AbstractTestCases;
 
 public class NavigationToHomePage extends AbstractTestCases {
 
-    @Test(testName = "1", description = "通过导航栏进入到首页")
+    @Test(testName = "navigation1", description = "通过导航栏进入到首页", groups = "pc")
     public void navigationToHomePage() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         navigationPage.clickHomePageLink();

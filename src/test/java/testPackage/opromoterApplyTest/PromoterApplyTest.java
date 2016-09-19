@@ -16,7 +16,7 @@ public class PromoterApplyTest extends AbstractTestCases {
     OpromoterBean opromoterBean;
     OpromoterApplyPage opromoterApplyPage;
 
-    @Test(description = "申请为推广商个人版")
+    @Test(testName = "opromoterApply1", description = "申请为推广商个人版", groups = "pc")
     public void testPersonPromoterApply() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
@@ -25,7 +25,7 @@ public class PromoterApplyTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "申请为推广商企业版")
+    @Test(testName = "opromoterApply2", description = "申请为推广商企业版", groups = "pc")
     public void testCompanyPromoterApply() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterBean = DataFactory.GetData(OpromoterBean.class);
@@ -35,7 +35,7 @@ public class PromoterApplyTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(description = "企业版推广联系方式")
+    @Test(testName = "opromoterApply3", description = "企业版推广联系方式", groups = "pc")
     public void testPromoterLink() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();

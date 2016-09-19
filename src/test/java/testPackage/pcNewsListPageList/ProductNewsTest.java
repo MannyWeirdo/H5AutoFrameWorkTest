@@ -10,7 +10,7 @@ import testCases.AbstractTestCases;
 
 public class ProductNewsTest extends AbstractTestCases {
 
-    @Test(testName = "", description = "信息动态点进产品新闻")
+    @Test(testName = "pcNewsList2", description = "信息动态点进产品新闻", groups = "pc")
     public void intoProductNewList() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         NewListPage newListPage = navigationPage.clickNewListLink();
