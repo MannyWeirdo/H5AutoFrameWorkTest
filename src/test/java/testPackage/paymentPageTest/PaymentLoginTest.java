@@ -11,7 +11,7 @@ import testCases.AbstractTestCases;
 
 public class PaymentLoginTest extends AbstractTestCases {
     @Test(testName = "payment1", description = "在线充值无绑卡用户扫描二维码登录", groups = "pc")
-    public void scanQrcodeLoginFromIOSTest() throws Exception {
+    public void scanQrcodeLoginForNoBindBankCardAccount() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PaymentLoginPage paymentLoginPage = navigationPage.clickPayPageLink();
         PaymentBalancePage balancePage = paymentLoginPage.scanQrCodeByNoBankCard();
@@ -19,7 +19,7 @@ public class PaymentLoginTest extends AbstractTestCases {
     }
 
     @Test(testName = "payment2", description = "在线充值Android扫描二维码登录", groups = "pc")
-    public void scanQrcodeLoginFromAndroidTest() throws Exception {
+    public void scanQrcodeLoginForBindBankCardAccount() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PaymentLoginPage paymentLoginPage = navigationPage.clickPayPageLink();
         PaymentBalancePage balancePage = paymentLoginPage.scanQrCode();
