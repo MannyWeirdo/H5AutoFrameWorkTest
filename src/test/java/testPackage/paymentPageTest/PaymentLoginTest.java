@@ -18,7 +18,7 @@ public class PaymentLoginTest extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(testName = "payment2", description = "在线充值Android扫描二维码登录", groups = "pc")
+    @Test(testName = "payment2", description = "在线充值有绑卡用户扫描二维码登录", groups = "pc")
     public void scanQrcodeLoginForBindBankCardAccount() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PaymentLoginPage paymentLoginPage = navigationPage.clickPayPageLink();

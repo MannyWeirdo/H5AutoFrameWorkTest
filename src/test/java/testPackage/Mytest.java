@@ -5,7 +5,6 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
-import basicTool.appLoginTool;
 import dataBean.app.login.UserBean;
 import page.pc.NavigationPage;
 import page.pc.homePage.PCHomePage;
@@ -28,13 +27,6 @@ public class Mytest extends AbstractTestCases {
         navigationPage.clickBusinessVersionLink();
         WebReporter.log(driver, driver.getTitle(), true, true);
         // Assert.assertTrue(false);
-
-    }
-
-    // @Test(testName = "1")
-    public void MyfristTest14() throws Exception {
-        appLoginTool.appSimpleAccountLogin();
-        WebReporter.log(appiumDirver, true, true, true);
 
     }
 
