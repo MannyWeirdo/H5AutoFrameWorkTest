@@ -45,7 +45,7 @@ public class RechargeOnlineByOtherBank extends AbstractTestCases {
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
 
-    @Test(testName = "payment17", description = "中国农业银行充值", groups = "pc")
+    // @Test(testName = "payment17", description = "中国农业银行充值", groups = "pc")
     public void ABCRecharge() throws Exception {
         NavigationPage navigationPage = new NavigationPage(driver);
         PaymentLoginPage paymentLoginPage = navigationPage.clickPayPageLink();
