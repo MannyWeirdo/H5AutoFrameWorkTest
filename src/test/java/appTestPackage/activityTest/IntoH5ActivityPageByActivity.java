@@ -13,7 +13,7 @@ import testCases.AbstractTestCases;
 public class IntoH5ActivityPageByActivity extends AbstractTestCases {
     @Test(testName = "Activity1", description = "进入央行征信", groups = "phone")
     public void IntoTheFristH5ActivityPage() throws Exception {
-        NavigationPage navigationPage = appLoginTool.appSimpleAccountLogin();
+        NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();
         ActivityPage activityPage = discoverPage.clickActivityButton();
         activityPage.intoActivelPageByNum(0);

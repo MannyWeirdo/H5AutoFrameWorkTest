@@ -14,7 +14,7 @@ public class MoneyJournal extends AbstractTestCases {
 
     @Test(testName = "MoneyJournal1", description = "进入央行征信", groups = "phone")
     public void IntoBankCentralBankCredit() throws Exception {
-        NavigationPage navigationPage = appLoginTool.appSimpleAccountLogin();
+        NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();
         discoverPage.clickMoneyJournalButton();
         WebReporter.log(appiumDirver, true, true, true);

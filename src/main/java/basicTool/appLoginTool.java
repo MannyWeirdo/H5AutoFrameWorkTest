@@ -16,8 +16,8 @@ public class appLoginTool {
      * @return
      * @throws Exception
      */
-    public static NavigationPage appSimpleAccountLogin() throws Exception {
-        UserBean userBean = DataFactory.GetData(UserBean.class);
+    public static NavigationPage appDefaultAccountLogin() throws Exception {
+        UserBean userBean = DataFactory.getObject(UserBean.class, "default");
         FristSwipePage fristSwipePage = new FristSwipePage(DriverFactory.createAppiumDriver());
         LoginPage loginPage = fristSwipePage.finishSwipe();
         return loginPage.login(userBean);

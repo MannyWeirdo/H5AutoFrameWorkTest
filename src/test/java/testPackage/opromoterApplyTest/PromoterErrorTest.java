@@ -20,7 +20,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testPersonName() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setPromoterName("测试测试测试测试测试测试测试");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -30,7 +30,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testIdCardNo() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setIdCardNo("123456789012345678990");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -40,7 +40,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testTelePhoneNoLength() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setTelePhoneNo("191000000121");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -50,7 +50,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testTelePhoneNo() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setTelePhoneNo("191000000qq");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -60,7 +60,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testEmail() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setEmail("qwww@13ff");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -70,7 +70,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testProvince() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setProvince("");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -80,7 +80,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testCity() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         opromoterBean.setCity("城市城市城市城市城市城市城市城市");
         opromoterApplyPage.fillOpromoterInformation(opromoterBean, false);
         WebReporter.log(driver, driver.getTitle(), true, true);
@@ -90,7 +90,7 @@ public class PromoterErrorTest extends AbstractTestCases {
     public void testCooperSource() throws Exception {
         navigationPage = new NavigationPage(driver);
         opromoterApplyPage = navigationPage.clickPromoterApplyLink();
-        opromoterBean = DataFactory.GetData(OpromoterBean.class);
+        opromoterBean = DataFactory.getObject(OpromoterBean.class, "default");
         StringUtilsTool stringUtilsTool = new StringUtilsTool();
         String str = stringUtilsTool.appendToStringBuffer(601, "源");
         opromoterBean.setCooperSource(str);

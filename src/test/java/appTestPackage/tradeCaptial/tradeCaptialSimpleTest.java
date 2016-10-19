@@ -14,7 +14,7 @@ public class tradeCaptialSimpleTest extends AbstractTestCases {
 
     @Test(testName = "tradeCaptial1", description = "进入余额生息页面", groups = "phone")
     public void IntoTradeCaptialPage() throws Exception {
-        NavigationPage navigationPage = appLoginTool.appSimpleAccountLogin();
+        NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         WalletPage walletPage = navigationPage.navigationToWallet();
         TradeCaptialPage tradeCaptialPage = walletPage.NavigationToTradeCaptialPage();
         WebReporter.log(appiumDirver, true, true, true);
