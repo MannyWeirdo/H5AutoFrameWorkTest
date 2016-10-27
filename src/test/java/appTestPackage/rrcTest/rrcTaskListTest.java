@@ -12,12 +12,12 @@ import testCases.AbstractTestCases;
 
 public class rrcTaskListTest extends AbstractTestCases {
 
-	@Test(testName = "rrcTaskListTest", description = "进入人人催催收任务列表页", groups = "phone")
-	public void IntoRrcTaskListPage() throws Exception {
-		NavigationPage navigationPage = appLoginTool.appSimpleAccountLogin();
-		DiscoverPage discoverPage = navigationPage.navigationToDiscover();
-		RrcEntrancePage rrcEntrancePage = discoverPage.clickRrcButton();
-		rrcEntrancePage.RrcEntranceToRrcTaskListPage();
-		WebReporter.log(appiumDirver, true, true, true);
-	}
+    @Test(testName = "rrcTaskListTest", description = "进入人人催催收任务列表页", groups = "phone")
+    public void IntoRrcTaskListPage() throws Exception {
+        NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
+        DiscoverPage discoverPage = navigationPage.navigationToDiscover();
+        RrcEntrancePage rrcEntrancePage = discoverPage.clickRrcButton();
+        rrcEntrancePage.RrcEntranceToRrcTaskListPage();
+        WebReporter.log(appiumDirver, true, true, true);
+    }
 }

@@ -11,7 +11,7 @@ import page.app.navigation.NavigationPage;
 import testCases.AbstractTestCases;
 
 public class IntoH5ActivityPageByActivity extends AbstractTestCases {
-    @Test(testName = "Activity1", description = "进入央行征信", groups = "phone")
+    @Test(testName = "Activity1", description = "进入hybrid的第一个活动页面", groups = "phone")
     public void IntoTheFristH5ActivityPage() throws Exception {
         NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();

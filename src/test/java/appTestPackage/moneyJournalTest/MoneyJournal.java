@@ -12,7 +12,7 @@ import testCases.AbstractTestCases;
 
 public class MoneyJournal extends AbstractTestCases {
 
-    @Test(testName = "MoneyJournal1", description = "进入央行征信", groups = "phone")
+    @Test(testName = "MoneyJournal1", description = "进投资有道", groups = "phone")
     public void IntoBankCentralBankCredit() throws Exception {
         NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();
