@@ -1,7 +1,5 @@
 package appTestPackage.rrcTest;
 
-import org.testng.annotations.Test;
-
 import com.customize.reporter.WebReporter;
 
 import basicTool.appLoginTool;
@@ -12,7 +10,7 @@ import page.app.navigation.NavigationPage;
 import testCases.AbstractTestCases;
 
 public class findOverdueTest extends AbstractTestCases {
-    @Test(testName = "rrcFindOverdueTest", description = "进入查老赖页面", groups = "phone")
+    // @Test(testName = "rrcFindOverdueTest", description = "进入查老赖页面", groups = "phone")
     public void IntoFindOverduePage() throws Exception {
         NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();

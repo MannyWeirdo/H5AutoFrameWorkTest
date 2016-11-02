@@ -11,12 +11,12 @@ import page.app.navigation.NavigationPage;
 import testCases.AbstractTestCases;
 
 public class IntoH5ActivityPageByActivity extends AbstractTestCases {
-    @Test(testName = "Activity1", description = "进入hybrid的第一个活动页面", groups = "phone")
+    @Test(testName = "Activity1", description = "通过活动入口进入随便一个活动页面", groups = "phone")
     public void IntoTheFristH5ActivityPage() throws Exception {
         NavigationPage navigationPage = appLoginTool.appDefaultAccountLogin();
         DiscoverPage discoverPage = navigationPage.navigationToDiscover();
         ActivityPage activityPage = discoverPage.clickActivityButton();
-        activityPage.intoActivelPageByNum(0);
+        activityPage.intoActivelPageByNum(1);
         WebReporter.log(appiumDirver, true, true, true);
     }
 
