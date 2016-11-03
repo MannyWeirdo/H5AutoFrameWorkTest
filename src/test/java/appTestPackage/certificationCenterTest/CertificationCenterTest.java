@@ -2,6 +2,8 @@ package appTestPackage.certificationCenterTest;
 
 import org.testng.annotations.Test;
 
+import com.customize.reporter.WebReporter;
+
 import basicTool.appLoginTool;
 import page.app.navigation.NavigationPage;
 import page.app.wallet.PersonalInformationPage;
@@ -15,6 +17,7 @@ public class CertificationCenterTest extends AbstractTestCases {
         WalletPage walletPage = navigationPage.navigationToWallet();
         PersonalInformationPage personalInformationPage = walletPage.ToPersonalInformatinPage();
         personalInformationPage.ToCertificationCenterPage();
+        WebReporter.log(appiumDirver, true, true, true);
 
     }
 }
