@@ -11,6 +11,7 @@ import org.testng.annotations.Listeners;
 import com.customize.reporter.WebReporter;
 
 import io.appium.java_client.AppiumDriver;
+import video.VideoReord;
 
 @Listeners({ filter.MethodSelector.class })
 public class AbstractTestCases {
@@ -24,11 +25,13 @@ public class AbstractTestCases {
      */
     @BeforeMethod
     public void initDriver() throws Exception {
+
+        if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
+            VideoReord.getInstance().startRecording();
         switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
         case "pc":
             driver = DriverFactory.createNewDriver();
             break;
-
         case "phone":
             appiumDirver = DriverFactory.createAppiumDriver();
             break;
@@ -40,9 +43,14 @@ public class AbstractTestCases {
 
     /**
      * Destory driver
+     * 
+     * @throws Exception
      */
     @AfterMethod
-    public void destoryDriver() {
+    public void destoryDriver() throws Exception {
+        if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
+            VideoReord.getInstance().stopRecording();
+
         switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
         case "phone":
             WebReporter.log(appiumDirver, true, true, true);
