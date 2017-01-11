@@ -15,62 +15,62 @@ import video.VideoReord;
 
 @Listeners({ filter.MethodSelector.class })
 public class AbstractTestCases {
-    public static WebDriver driver;
-    public static AppiumDriver appiumDirver;
+	public static WebDriver driver;
+	public static AppiumDriver appiumDirver;
 
-    /**
-     * Init driver
-     * 
-     * @throws Exception
-     */
-    @BeforeMethod
-    public void initDriver() throws Exception {
+	/**
+	 * Init driver
+	 * 
+	 * @throws Exception
+	 */
+	@BeforeMethod
+	public void initDriver() throws Exception {
 
-        if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
-            VideoReord.getInstance().startRecording();
-        switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
-        case "pc":
-            driver = DriverFactory.createNewDriver();
-            break;
-        case "phone":
-            appiumDirver = DriverFactory.createAppiumDriver();
-            break;
+		if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
+			VideoReord.getInstance().startRecording();
+		switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
+		case "pc":
+			driver = DriverFactory.createNewDriver();
+			break;
+		case "phone":
+			appiumDirver = DriverFactory.createAppiumDriver();
+			break;
 
-        default:
-            break;
-        }
-    }
+		default:
+			break;
+		}
+	}
 
-    /**
-     * Destory driver
-     * 
-     * @throws Exception
-     */
-    @AfterMethod
-    public void destoryDriver() throws Exception {
-        if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
-            VideoReord.getInstance().stopRecording();
+	/**
+	 * Destory driver
+	 * 
+	 * @throws Exception
+	 */
+	@AfterMethod
+	public void destoryDriver() throws Exception {
 
-        switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
-        case "phone":
-            WebReporter.log(appiumDirver, true, true, true);
-            DriverFactory.closeAppiumDriver();
-            break;
-        case "pc":
-            WebReporter.log(driver, driver.getTitle(), true, true);
-            DriverFactory.CloseDriver();
-            break;
-        default:
-            break;
-        }
-    }
+		switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
+		case "phone":
+			WebReporter.log(appiumDirver, true, true, true);
+			DriverFactory.closeAppiumDriver();
+			break;
+		case "pc":
+			WebReporter.log(driver, driver.getTitle(), true, true);
+			DriverFactory.CloseDriver();
+			break;
+		default:
+			break;
+		}
+		if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
+			VideoReord.getInstance().stopRecording();
+	}
 
-    /**
-     * log message to TestNG result
-     * 
-     * @param str
-     */
-    public static void logMessage(String str) {
-        Reporter.log(str, 5, true); // Making a log entry.
-    }
+	/**
+	 * log message to TestNG result
+	 * 
+	 * @param str
+	 */
+	public static void logMessage(String str) {
+		Reporter.log(str, 5, true); // Making a log entry.
+	}
 }
