@@ -25,7 +25,8 @@ public class AbstractTestCases {
 	 */
 	@BeforeMethod
 	public void initDriver() throws Exception {
-
+	    
+	    System.out.println(ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"));
 		if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
 			VideoReord.getInstance().startRecording();
 		switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
