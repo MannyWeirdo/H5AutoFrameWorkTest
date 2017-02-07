@@ -1,5 +1,7 @@
 package testCases;
 
+import java.lang.reflect.Method;
+
 import org.ConfigUtil.ConfigUtil;
 import org.DriverFactory.Factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
@@ -24,11 +26,9 @@ public class AbstractTestCases {
 	 * @throws Exception
 	 */
 	@BeforeMethod
-	public void initDriver() throws Exception {
-	    
-	    System.out.println(ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"));
+	public void initDriver(Method method) throws Exception {
 		if (ConfigUtil.getConfigUtil().getConfigFileContent("isVideo").equals("true"))
-			VideoReord.getInstance().startRecording();
+			VideoReord.getInstance().startRecording(method.getName());
 		switch (ConfigUtil.getConfigUtil().getConfigFileContent("deviceType")) {
 		case "pc":
 			driver = DriverFactory.createNewDriver();

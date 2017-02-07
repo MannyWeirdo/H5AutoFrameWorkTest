@@ -13,19 +13,18 @@ public class Mytest extends AbstractTestCases {
 
 	UserBean userBean;
 
-	@Test(testName = "1257", description = "", groups = "pc")
-	public void MyfristTest12() throws Exception {
-		System.out.println("hahaha");
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-		WebReporter.log(driver, driver.getTitle(), true, true);
-	}
-
+    @Test(testName = "1257", description = "", groups = "pc")
+    public void MyfristTest12() throws Exception {
+        System.out.println("hahaha");
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
 }
