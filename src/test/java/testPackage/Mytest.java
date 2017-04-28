@@ -34,4 +34,27 @@ public class Mytest extends AbstractTestCases {
         LivePage livePage = navigationPage.navigationLivePage();
         WebReporter.log(driver, driver.getTitle(), true, true);
     }
+    
+    @Test(testName = "1259", description = "", groups = "pc")
+    public void gotoLivePage2() throws Exception {
+       // PCHomePage pchomePage = new PCHomePage(driver);
+//        LoginPage loginPage = pchomePage.gotoLoginPage();
+//        pchomePage = loginPage.login("13295422111", "xiaoyang00x");
+//        NavigationPage navigationPage = new NavigationPage(driver);      
+//        LivePage livePage = navigationPage.navigationLivePage();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+    
+    @Test(testName = "1260", description = "", groups = "pc")
+    public void gotoLivePage3() throws Exception {
+        //PCHomePage pchomePage = new PCHomePage(driver);
+//        LoginPage loginPage = pchomePage.gotoLoginPage();
+//        pchomePage = loginPage.login("13295422111", "xiaoyang00x");
+//        NavigationPage navigationPage = new NavigationPage(driver);      
+//        LivePage livePage = navigationPage.navigationLivePage();
+        WebReporter.log(driver, driver.getTitle(), true, true);
+    }
+    
+    
 }
