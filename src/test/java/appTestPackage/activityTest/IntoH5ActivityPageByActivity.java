@@ -4,11 +4,11 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
+import abstractTestCase.AbstractTestCases;
 import basicTool.appLoginTool;
 import page.app.discover.ActivityPage;
 import page.app.discover.DiscoverPage;
 import page.app.navigation.NavigationPage;
-import testCases.AbstractTestCases;
 
 public class IntoH5ActivityPageByActivity extends AbstractTestCases {
     @Test(testName = "Activity1", description = "通过活动入口进入随便一个活动页面", groups = "phone")

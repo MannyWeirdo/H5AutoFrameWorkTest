@@ -4,10 +4,10 @@ import org.testng.annotations.Test;
 
 import com.customize.reporter.WebReporter;
 
+import abstractTestCase.AbstractTestCases;
 import basicTool.appLoginTool;
 import page.app.discover.DiscoverPage;
 import page.app.navigation.NavigationPage;
-import testCases.AbstractTestCases;
 
 public class rrcEntranceTest extends AbstractTestCases {
 

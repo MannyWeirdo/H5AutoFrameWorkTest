@@ -1,4 +1,4 @@
-package testCases;
+package abstractTestCase;
 
 import java.lang.reflect.Method;
 
@@ -36,7 +36,10 @@ public class AbstractTestCases {
 		case "phone":
 			appiumDirver = DriverFactory.createAppiumDriver();
 			break;
-
+		case "dubbo":
+		    break;
+		case "http":
+		    break;
 		default:
 			break;
 		}
@@ -59,6 +62,10 @@ public class AbstractTestCases {
 			WebReporter.log(driver, driver.getTitle(), true, true);
 			DriverFactory.CloseDriver();
 			break;
+		case "dubbo":
+		    break;
+		case "http":
+		    break;
 		default:
 			break;
 		}

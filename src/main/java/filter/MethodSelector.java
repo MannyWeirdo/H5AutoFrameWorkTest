@@ -11,7 +11,7 @@ import org.testng.ITestContext;
 import org.testng.ITestNGMethod;
 import org.testng.annotations.Test;
 
-import testCases.AbstractTestCases;
+import abstractTestCase.AbstractTestCases;
 
 public class MethodSelector extends AbstractTestCases implements IMethodInterceptor {
 
