@@ -7,3 +7,5 @@ test-output/
 velocity.log
 /resources/
 .DS_Store
+*.iml
+.idea/
