@@ -1,24 +1,24 @@
 package abstractTestCase;
 
-import java.lang.reflect.Method;
-
+import com.customize.reporter.WebReporter;
+import io.appium.java_client.AppiumDriver;
 import org.ConfigUtil.ConfigUtil;
 import org.DriverFactory.Factory.DriverFactory;
 import org.openqa.selenium.WebDriver;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
-
-import com.customize.reporter.WebReporter;
-
-import io.appium.java_client.AppiumDriver;
 import video.VideoReord;
+
+import java.lang.reflect.Method;
 
 @Listeners({ filter.MethodSelector.class })
 public class AbstractTestCases {
 	public static WebDriver driver;
 	public static AppiumDriver appiumDirver;
+	public static ClassPathXmlApplicationContext context;
 
 	/**
 	 * Init driver
@@ -37,7 +37,9 @@ public class AbstractTestCases {
 			appiumDirver = DriverFactory.createAppiumDriver();
 			break;
 		case "dubbo":
-		    
+			context = new ClassPathXmlApplicationContext(
+			new String[] { "applicationConsumer.xml" });
+			context.start();
 		    break;
 		case "http":
 		    break;
