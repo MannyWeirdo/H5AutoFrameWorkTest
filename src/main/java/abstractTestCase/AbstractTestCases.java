@@ -37,8 +37,7 @@ public class AbstractTestCases {
 			appiumDirver = DriverFactory.createAppiumDriver();
 			break;
 		case "dubbo":
-			context = new ClassPathXmlApplicationContext(
-			new String[] { "applicationConsumer.xml" });
+			context = new ClassPathXmlApplicationContext(new String[] {"applicationConsumer.xml"});
 			context.start();
 		    break;
 		case "http":

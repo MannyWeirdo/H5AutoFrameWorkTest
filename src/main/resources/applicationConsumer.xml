@@ -6,17 +6,23 @@
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
+	<dubbo:application name="prod-sample"/>
+	<!--<dubbo:provider timeout="3000" filter="providerRequestFilter"></dubbo:provider>-->
+	<dubbo:registry address="zookeeper://172.18.0.20:2181?backup=172.18.0.21:2181,172.18.0.22:2181"></dubbo:registry>
 
-<!-- 	<dubbo:application name="consumer-of-helloworld-app" />
+	<dubbo:consumer check="false"  />
 
-	<dubbo:registry protocol="zookeeper" address="localhost:2181" />
+	<!--项目系统底层-->
+	<dubbo:reference id="projectApiService" interface="com.miaoqian.proj.api.service.ProjectApiService" version="1.0" />
+	<dubbo:reference id="productApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />
 
-	<dubbo:consumer timeout="5000" />
 
-	<dubbo:reference id="demoService" interface="service.SayHelloToClient" /> -->
-	<!--<dubbo:application name="consumer-of-helloworld-app" />-->
-	<!--<dubbo:consumer timeout="5000" />-->
-	<!--<dubbo:registry protocol="zookeeper" address="10.0.1.167:2181" />-->
-	<!--<dubbo:reference id="productApiService" interface="com.miaoqian.prod.api.service.ProductApiService" />-->
+
+	<!--<dubbo:reference id="tradeApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />-->
+
+	<!--<dubbo:service interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" ref="productApiService"/>-->
+	<!--<dubbo:service interface="com.miaoqian.prod.api.service.TradeApiService" version="1.0" ref="tradeApiService" />-->
+	<!--<dubbo:service interface="com.miaoqian.prod.api.scheduler.TradeScheduleService" version="1.0" ref="tradeScheduleService" />-->
+
 
 </beans>  
