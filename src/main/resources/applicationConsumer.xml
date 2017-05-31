@@ -13,9 +13,16 @@
 	<dubbo:consumer check="false"  />
 
 	<!--项目系统底层-->
+	<!-- 产品&项目 -->
 	<dubbo:reference id="projectApiService" interface="com.miaoqian.proj.api.service.ProjectApiService" version="1.0" />
 	<dubbo:reference id="productApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />
-
+	<!-- 用户服务 -->
+	<dubbo:reference id="outUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserRead" timeout="50000" cache="false"/>
+	<dubbo:reference id="outUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserWrite" timeout="50000" cache="false"/>
+	<dubbo:reference id="interUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserRead" timeout="50000" cache="false"/>
+	<dubbo:reference id="interUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserWrite" timeout="50000" cache="false"/>
+	<!-- 交易服务 -->
+	<dubbo:reference id="frontTradeService" interface="com.miaoqian.trade.api.front.TradeServiceApi" timeout="50000" cache="false"/>
 
 
 	<!--<dubbo:reference id="tradeApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />-->
