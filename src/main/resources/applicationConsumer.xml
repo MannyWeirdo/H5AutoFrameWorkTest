@@ -1,35 +1,71 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd  
         http://code.alibabatech.com/schema/dubbo  
         http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
 
-	<dubbo:application name="prod-sample"/>
-	<!--<dubbo:provider timeout="3000" filter="providerRequestFilter"></dubbo:provider>-->
-	<dubbo:registry address="zookeeper://172.18.0.20:2181?backup=172.18.0.21:2181,172.18.0.22:2181"></dubbo:registry>
+    <dubbo:application name="prod-sample"/>
+    <!--<dubbo:provider timeout="3000" filter="providerRequestFilter"></dubbo:provider>-->
+    <!--<dubbo:registry address="zookeeper://172.18.0.58:2181"></dubbo:registry>-->
+    <dubbo:registry address="zookeeper://172.18.0.20:2181?backup=172.18.0.21:2181,172.18.0.22:2181"></dubbo:registry>
+    <dubbo:consumer check="false"/>
 
-	<dubbo:consumer check="false"  />
+    <!-- 产品&项目 -->
+    <dubbo:reference id="projectApiService" interface="com.miaoqian.proj.api.service.ProjectApiService" version="1.0"/>
+    <dubbo:reference id="productApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0"/>
+    <!-- 用户服务 -->
+    <dubbo:reference id="outUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserRead"
+                     timeout="100000" cache="false"/>
+    <dubbo:reference id="outUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserWrite"
+                     timeout="100000" cache="false"/>
+    <dubbo:reference id="interUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserRead"
+                     timeout="100000" cache="false"/>
+    <dubbo:reference id="interUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserWrite"
+                     timeout="100000" cache="false"/>
+    <!-- 交易服务 -->
+    <dubbo:reference id="capitalApi" interface="com.miaoqian.trade.api.front.CapitalApi"></dubbo:reference>
+    <dubbo:reference id="capitalQueryApi" interface="com.miaoqian.trade.api.front.CapitalQueryApi"></dubbo:reference>
+    <dubbo:reference id="rechargeApi" interface="com.miaoqian.trade.api.front.RechargeApi"></dubbo:reference>
+    <dubbo:reference id="rechargeQueryApi" interface="com.miaoqian.trade.api.front.RechargeQueryApi"></dubbo:reference>
+    <dubbo:reference id="redeemApi" interface="com.miaoqian.trade.api.front.RedeemApi"></dubbo:reference>
+    <dubbo:reference id="redeemQueryApi" interface="com.miaoqian.trade.api.front.RedeemQueryApi"></dubbo:reference>
+    <dubbo:reference id="subscribeApi" interface="com.miaoqian.trade.api.front.SubscribeApi"></dubbo:reference>
+    <dubbo:reference id="subscribeQueryApi"
+                     interface="com.miaoqian.trade.api.front.SubscribeQueryApi"></dubbo:reference>
+    <dubbo:reference id="tradeApi" interface="com.miaoqian.trade.api.front.TradeApi"></dubbo:reference>
+    <dubbo:reference id="tradeQueryApi" interface="com.miaoqian.trade.api.front.TradeQueryApi"></dubbo:reference>
+    <dubbo:reference id="withdrawApi" interface="com.miaoqian.trade.api.front.WithdrawApi"></dubbo:reference>
+    <dubbo:reference id="withdrawQueryApi" interface="com.miaoqian.trade.api.front.WithdrawQueryApi"></dubbo:reference>
+    <dubbo:reference id="redeemScheduleApi"
+                     interface="com.miaoqian.trade.api.schedule.RedeemScheduleApi"></dubbo:reference>
+    <dubbo:reference id="SubscribeBatchApi"
+                     interface="com.miaoqian.trade.api.schedule.SubscribeBatchApi"></dubbo:reference>
+    <!-- 基础服务 -->
+    <dubbo:reference id="emailServices" interface="com.miaoqian.email.api.dubbo.MailAPI" timeout="50000" cache="false"/>
+    <dubbo:reference id="fileServices" interface="com.miaoqian.file.api.dubbo.FileAPI" timeout="50000" cache="false"/>
+    <dubbo:reference id="smsServices" interface="com.miaoqian.sms.api.dubbo.SmsAPI" timeout="50000" cache="false"/>
 
-	<!--项目系统底层-->
-	<!-- 产品&项目 -->
-	<dubbo:reference id="projectApiService" interface="com.miaoqian.proj.api.service.ProjectApiService" version="1.0" />
-	<dubbo:reference id="productApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />
-	<!-- 用户服务 -->
-	<dubbo:reference id="outUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserRead" timeout="50000" cache="false"/>
-	<dubbo:reference id="outUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.outuser.OutUserWrite" timeout="50000" cache="false"/>
-	<dubbo:reference id="interUserApiReadService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserRead" timeout="50000" cache="false"/>
-	<dubbo:reference id="interUserApiWriteService" interface="com.miaoqian.usersvc.dubbo.api.interuser.InterUserWrite" timeout="50000" cache="false"/>
-	<!-- 交易服务 -->
-	<dubbo:reference id="frontTradeService" interface="com.miaoqian.trade.api.front.TradeServiceApi" timeout="50000" cache="false"/>
+    <!-- mq config begin -->
 
+    <dubbo:reference id="producerService" interface="com.miaoqian.msg.api.producer.ProducerService" version="1.0"/>
+    <dubbo:reference id="rocketMqAddrService" interface="com.miaoqian.msg.api.rocketmq.RocketMqAddrService"
+                     version="1.0"/>
+    <dubbo:reference id="consumeErrorService" interface="com.miaoqian.msg.api.consumer.ConsumeErrorService"
+                     version="1.0"/>
 
-	<!--<dubbo:reference id="tradeApiService" interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" />-->
+    <!-- rocket mq provider config begin-->
 
-	<!--<dubbo:service interface="com.miaoqian.prod.api.service.ProductApiService" version="1.0" ref="productApiService"/>-->
-	<!--<dubbo:service interface="com.miaoqian.prod.api.service.TradeApiService" version="1.0" ref="tradeApiService" />-->
-	<!--<dubbo:service interface="com.miaoqian.prod.api.scheduler.TradeScheduleService" version="1.0" ref="tradeScheduleService" />-->
+    <bean id="smsSendProducerClient" class="com.miaoqian.msg.api.producer.rocketmq.RocketProducerClient">
+        <property name="rocketMqName" value="RocketMqCluster"/>
+        <property name="mqProducerGroup" value="smsSendProducerGroup"/>
+        <property name="producerService" ref="producerService"/>
+        <property name="rocketMqAddrService" ref="rocketMqAddrService"/>
+    </bean>
 
+    <!-- rocket mq provider config begin-->
+
+    <!-- mq config end -->
 
 </beans>  

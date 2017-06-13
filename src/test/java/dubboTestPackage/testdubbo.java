@@ -1,7 +1,6 @@
 package dubboTestPackage;
 
 import abstractTestCase.AbstractTestCases;
-import com.aliyun.openservices.log.common.Project;
 import com.miaoqian.framework.domain.Result;
 import com.miaoqian.prod.api.dto.request.CurrentProductDto;
 import com.miaoqian.prod.api.dto.request.ProductDto;
