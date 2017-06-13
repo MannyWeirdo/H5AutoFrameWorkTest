@@ -22,7 +22,7 @@ public class ProductApiServiceTest extends AbstractTestCases {
     @Test(testName = "mytest", description = "创建默认产品", groups = "dubbo")
     public void testData() throws Exception {
         MySupplyProjectParamDto mySupplyProjectParamDto = DataFactory.getObject(MySupplyProjectParamDto.class,"noSupplyProjectSubParamDtoList");
-        SupplyProjectParamDto supplyProjectParamDto =  DataFactory.tansferData(mySupplyProjectParamDto,SupplyProjectParamDto.class);
+        SupplyProjectParamDto supplyProjectParamDto =  DataFactory.transferData(mySupplyProjectParamDto,SupplyProjectParamDto.class);
         System.out.println(supplyProjectParamDto.getIpAddress());
         System.out.println(supplyProjectParamDto.getSupplyProjectSubParamDtoList());
 
@@ -35,7 +35,7 @@ public class ProductApiServiceTest extends AbstractTestCases {
     public void createProduct() throws Exception {
         ProductApiService productApiService = (ProductApiService)context.getBean("productApiService");
         MyProductDto myProductDto = DataFactory.getObject(MyProductDto.class,"default");
-        ProductDto productDto =  DataFactory.tansferData(myProductDto,ProductDto.class);
+        ProductDto productDto =  DataFactory.transferData(myProductDto,ProductDto.class);
         Result result = productApiService.createProduct(productDto);
         System.out.println(result);
     }
@@ -45,7 +45,7 @@ public class ProductApiServiceTest extends AbstractTestCases {
     public void updateProduct() throws Exception {
         ProductApiService productApiService = (ProductApiService)context.getBean("productApiService");
         MyProductDto myProductDto = DataFactory.getObject(MyProductDto.class,"default");
-        ProductDto productDto =  DataFactory.tansferData(myProductDto,ProductDto.class);
+        ProductDto productDto =  DataFactory.transferData(myProductDto,ProductDto.class);
         //Result createResult = productApiService.createProduct(productDto);
         //System.out.println(createResult);
         productDto.setDescription("haveupdateproduct!!!");
